@@ -1,0 +1,39 @@
+#first{
+  color:red;
+  font-size: 20px;
+  /* text-decoration: underline; */
+  font-style: italic;
+  /* background-color: aqua;
+  text-align: center;
+  font-family:'Times New Roman', Times, serif; */
+  font-weight: bolder;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+
+
+  /* border-width: 1px;
+  border-style: solid;
+  border-color: brown; */
+
+  border: 5px solid red;
+  /* padding: 100px; */
+  /* margin: 100px; */
+  /* padding-left: 500px; */
+  /* padding-right: 300px; */
+  /* padding-top: 200px; */
+  /* padding-bottom: 200px; */
+  /* margin-left: 200px; */
+  /* margin-right: 200px; */
+  margin-top: 20px;
+}
+
+.second{
+  color: aqua;
+  font-size: 30px;
+  border: 2px dotted red;
+
+}
+
+/* body{
+  margin: 0px;
+} */
