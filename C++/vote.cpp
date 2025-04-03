@@ -13,8 +13,7 @@ int main()
     cout<<"not eligible to vote";
   }
   else{
-    cout<<"Invalid Input";
-  }
+    cout<<"Invalid Input";}
 
 return 0;
 }
