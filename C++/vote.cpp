@@ -12,9 +12,7 @@ int main()
   else if(age>=0 && age<18){
     cout<<"not eligible to vote";
   }
-  else{
-    cout<<"Invalid Input";
-  }
+
 
 return 0;
 }
