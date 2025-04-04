@@ -7,11 +7,4 @@ int main()
   cin>>pin;
 
   if(pin==1234){
-    cout<<"Pin is correct.";
-  }
-  else{
-    cout<<"Pin is incorrect.";
-  }
-
-return 0;
-}
+    cout<<"Pin is corre
