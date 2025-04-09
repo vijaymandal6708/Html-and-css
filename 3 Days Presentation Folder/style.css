@@ -1,0 +1,185 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: Poppins,sans-serif;
+}
+
+header .header-container{
+  display: inline-block;
+
+}
+
+header .header-container nav ul{
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+header .header-container nav ul li{
+  list-style-type: none;
+}
+
+header .header-container nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-weight: 540;
+}
+
+#logo{
+  height: 50px;
+  margin-right: 600px;
+  padding-left: 60px;
+  padding-right: 80px;
+}
+
+ul img{
+  height: 35px;
+  margin-top: -10px;
+}
+
+/* ------------ watch heading ------------ */
+
+.apple-container{
+  height: 700px;
+  width: 1300;
+  background: linear-gradient(90deg,#ddd5f3 40%,#f8f9fa 60%);
+  display: flex;
+}
+
+.watch-title{
+  height: 300px;
+  width: 400px;
+  left: 60px;
+  top: 200px;
+  margin-left: 150px;
+  margin-top: 250px;
+  margin-right: 130px;
+  line-height: 60px;
+}
+
+.watch-title h1{
+  font-size: 44px;
+}
+
+.watch-title p{
+   text-decoration: underline;
+   font-weight: 500;
+}
+
+.watch-image img{
+  margin-top: 100px;
+}
+
+/* ------------ featured products ------------ */
+
+.featured-products h2{
+  margin-top: 20px;
+  margin-left: 650px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.row{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+}
+
+.row img{
+  flex-basis: 23%;
+  height: 350px;
+}
+
+.fa-solid, .fa-star, .fa-regular{
+  color: #ddd5f3;
+}
+
+.row p{
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ------------ footer ------------ */
+
+footer{
+  background: #ddd5f3;
+  color: #000000;
+  font-size: 14px;
+  padding: 60px 0px 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-row{
+  display: flex;
+}
+
+footer h3{
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col-1{
+  flex-basis: 20%;
+  margin-left: 80px;
+}
+
+.footer-col-2{
+  flex: 1;
+  flex-basis: 25%;
+  text-align: center;
+}
+
+.footer-col-2 img{
+  margin-left: 40px;
+  width: 140px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-col-3, .footer-col-4{
+  flex-basis: 20%;
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.app-logo{
+  margin-top: 20px;
+}
+
+.app-logo img{
+  width: 140px;
+}
+
+footer hr{
+  border: none;
+  background: #555;
+  height: 1px;
+  margin: 20px 0px;
+}
+
+.copyright{
+  text-align: center;
+}
+
+/* ---------- media queery for less 600px size ---------- */
+
+@media only screen and (max-width: 600px){
+  .row{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  
+}
