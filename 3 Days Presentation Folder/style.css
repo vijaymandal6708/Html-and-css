@@ -4,18 +4,10 @@
   font-family: Poppins,sans-serif;
 }
 
-header .header-container{
-  display: inline-block;
-
-}
-
 header .header-container nav ul{
   display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding: 10px;
+  justify-content: space-evenly;
+  line-height: 50px;
 }
 
 header .header-container nav ul li{
@@ -28,35 +20,35 @@ header .header-container nav ul li a{
   font-weight: 540;
 }
 
-#logo{
+.logo-container{
   height: 50px;
-  margin-right: 600px;
-  padding-left: 60px;
-  padding-right: 80px;
+  width: 850px;
 }
 
-ul img{
+#logo{
+  height: 50px;
+  border: 1px solid #ddd5f3;
+  box-shadow: 3px 3px #ddd5f3;
+}
+
+#cart{
   height: 35px;
-  margin-top: -10px;
+  padding: 12px;
 }
 
 /* ------------ watch heading ------------ */
 
 .apple-container{
-  height: 700px;
+  height: 650px;
   width: 1300;
   background: linear-gradient(90deg,#ddd5f3 40%,#f8f9fa 60%);
   display: flex;
 }
 
 .watch-title{
-  height: 300px;
-  width: 400px;
-  left: 60px;
-  top: 200px;
-  margin-left: 150px;
-  margin-top: 250px;
-  margin-right: 130px;
+  height: 250px;
+  width: 290px;
+  padding: 200px 140px;
   line-height: 60px;
 }
 
@@ -69,8 +61,10 @@ ul img{
    font-weight: 500;
 }
 
-.watch-image img{
-  margin-top: 100px;
+.watch-image{
+  height: 480px;
+  width: 720px;
+  padding: 110px 100px;
 }
 
 /* ------------ featured products ------------ */
@@ -141,7 +135,7 @@ footer h3{
 
 .footer-col-2 img{
   margin-left: 40px;
-  width: 140px;
+  width: 180px;
   height: 50px;
   margin-bottom: 20px;
 }
@@ -176,10 +170,17 @@ footer hr{
 
 /* ---------- media queery for less 600px size ---------- */
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 450px){
+
+  body{
+    justify-content: center;
+  }
   .row{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
   }
-  
+  .apple-container{
+    display: grid;
+    grid-template-columns: auto;
+  }
 }
