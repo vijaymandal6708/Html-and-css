@@ -4,17 +4,25 @@
   font-family: Poppins,sans-serif;
 }
 
-header .header-container nav ul{
+header .navbar{
   display: flex;
   justify-content: space-evenly;
+  padding: 15px 30px;
+}
+
+header .navbar nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  align-items: center;
   line-height: 50px;
 }
 
-header .header-container nav ul li{
+header .navbar nav ul li{
   list-style-type: none;
 }
 
-header .header-container nav ul li a{
+header .navbar nav ul li a{
   text-decoration: none;
   color: black;
   font-weight: 540;
@@ -27,13 +35,21 @@ header .header-container nav ul li a{
 
 #logo{
   height: 50px;
+  padding: 0px 40px;
   border: 1px solid #ddd5f3;
   box-shadow: 3px 3px #ddd5f3;
 }
 
+.cart-container{
+  height: 44px;
+}
+
 #cart{
-  height: 35px;
-  padding: 12px;
+  height: 36px;
+}
+
+#menu-icon{
+  display: none;
 }
 
 /* ------------ watch heading ------------ */
@@ -42,7 +58,8 @@ header .header-container nav ul li a{
   height: 650px;
   width: 1300;
   background: linear-gradient(90deg,#ddd5f3 40%,#f8f9fa 60%);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .watch-title{
@@ -71,7 +88,6 @@ header .header-container nav ul li a{
 
 .featured-products h2{
   margin-top: 20px;
-  margin-left: 650px;
   font-size: 20px;
   font-weight: 500;
 }
@@ -172,15 +188,72 @@ footer hr{
 
 @media only screen and (max-width: 450px){
 
-  body{
-    justify-content: center;
+  header .navbar{
+    display: flex;
+    padding: 15px 5px;
+    width: 100%;
+  }
+  .logo-container{
+    width: 150px;
+    height: 40px;
+  }
+  #logo{
+    height: 40px;
+    padding: 0px 15px;
+  }
+  header .navbar .cart-container{
+    display: flex;
+    gap: 20px;
+    width: 85px;
+  }
+  header .navbar .cart-container #menu-icon{
+    display: inline-block;
+    height: 30px;
+    padding-top: 5px;
+  }
+  header .navbar nav ul{
+    display: none;
   }
   .row{
-    display: grid;
     grid-template-columns: auto;
   }
   .apple-container{
-    display: grid;
     grid-template-columns: auto;
+    height: 560px;
   }
+  .watch-title{
+    padding: 30px 60px;
+    width: 240px;
+  }
+  .watch-title h1{
+    font-size: 36px;
+  }
+  .watch-image{
+    width: 240px;
+    height: 300px;
+    padding: 30px 30px;
+  }
+  .watch-image img{
+    width: 300px;
+  }
+  .item-div img{
+    width: 280px;
+    height: 320px;
+  }
+  footer{
+    display: none;
+  }
+  .featured-products{
+    align-self: center;
+    justify-self: center;
+    height: 50px;
+    width: 160px;
+  }
+  .featured-products h2{
+    height: 50px;
+    width: 250px;
+    font-size: 16px;
+  }
+
+
 }
