@@ -86,6 +86,11 @@ header .navbar nav ul li a{
 
 /* ------------ featured products ------------ */
 
+.featured-products{
+  align-self: center;
+  justify-self: center;
+}
+
 .featured-products h2{
   margin-top: 20px;
   font-size: 20px;
@@ -101,7 +106,8 @@ header .navbar nav ul li a{
 
 .row img{
   flex-basis: 23%;
-  height: 350px;
+  height: 400px;
+  width: 350px;
 }
 
 .fa-solid, .fa-star, .fa-regular{
@@ -125,7 +131,8 @@ footer{
 }
 
 .footer-row{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 
 footer h3{
@@ -139,15 +146,14 @@ footer h3{
 }
 
 .footer-col-1{
-  flex-basis: 20%;
   margin-left: 80px;
+  text-align: center;
 }
 
 .footer-col-2{
-  flex: 1;
-  flex-basis: 25%;
   text-align: center;
 }
+
 
 .footer-col-2 img{
   margin-left: 40px;
@@ -182,6 +188,60 @@ footer hr{
 
 .copyright{
   text-align: center;
+}
+
+/* ------------- sign-up page ------------ */
+
+.sign-up-container{
+  width: 100%;
+  height: 600px;
+  background-image: url(Images/new.jpg);
+  background-size: cover;
+  margin-bottom: -30px;
+}
+.sign-up-form{
+  position: relative;
+  top: 100px;
+  left: 800px;
+  height: 300px;
+  width: 23%;
+  padding: 50px;
+  border: 5px solid white;
+  border-radius: 25px;
+  box-shadow: 5px 15px rgb(198, 141, 236);
+}
+.sign-up-form h3{
+  margin: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+.sign-up-form i{
+  position: relative;
+}
+
+.first-icon{
+  top: 28px;
+  left: 300px;
+}
+
+.second-icon{
+  top: 86px;
+  left: 280px;
+}
+
+.third-icon{
+  top: 146px;
+  left: 260px;
+}
+
+
+input{
+  border-radius: 15px;
+  padding: 7px 30px;
+  width: 280px;
+  justify-self: center;
+  outline: none;
+  border: none;
 }
 
 /* ---------- media queery for less 600px size ---------- */
@@ -236,12 +296,13 @@ footer hr{
   .watch-image img{
     width: 300px;
   }
+  .item-div{
+       width: 280px;
+  }
+
   .item-div img{
     width: 280px;
     height: 320px;
-  }
-  footer{
-    display: none;
   }
   .featured-products{
     align-self: center;
@@ -253,6 +314,23 @@ footer hr{
     height: 50px;
     width: 250px;
     font-size: 16px;
+  }
+  .footer-col-1{
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+  .footer-row{
+    grid-template-columns: auto;
+    align-items: center;
+    justify-items: center;
+  }
+  .footer-col-2 img{
+    margin-left: 0px;
+  }
+  .footer-col-2{
+    text-align: center;
   }
 
 
