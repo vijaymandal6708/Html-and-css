@@ -57,7 +57,7 @@ header .navbar nav ul li a{
 .apple-container{
   height: 650px;
   width: 1300;
-  background: linear-gradient(90deg,#ddd5f3 40%,#f8f9fa 60%);
+  background: linear-gradient(90deg,#c0aef3 40%,#f8f9fa 60%);
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -195,54 +195,84 @@ footer hr{
 .sign-up-container{
   width: 100%;
   height: 600px;
-  background-image: url(Images/new.jpg);
+  background-image: url(Images/final.jpg);
   background-size: cover;
   margin-bottom: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.sign-up-form{
-  position: relative;
-  top: 100px;
-  left: 800px;
+.common-container{
+  height: 400px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #f8f9fa;
+  border-radius: 15px;
+}
+.sign-up{
   height: 300px;
-  width: 23%;
+  width: 300px;
   padding: 50px;
-  border: 5px solid white;
-  border-radius: 25px;
-  box-shadow: 5px 15px rgb(198, 141, 236);
 }
-.sign-up-form h3{
-  margin: 10px;
-  text-align: center;
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  min-width: 278px;
+}
+.title{
+  font-size: 25px;
+  color: #000000;
+  margin-bottom: 10px;
   text-decoration: underline;
 }
-.sign-up-form i{
+.input-items{
+  width: 100%;
+  height: 35px;
+  background: #f8f9fa;
+  margin: 10px 0px;
+  border: 2px solid #c0aef3;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+
+}
+.input-items i{
+  height: 20px;
+  width: 20px;
+  flex: 1;
+  text-align: center;
+}
+.input-items input{
+  flex: 4;
+  background: none;
+  border: none;
+  outline: none;
+}
+#btn{
+  width: 150px;
+  height: 35px;
+  border: none;
+  border-radius: 50px;
+  background: #8067c6;
+  color: #f8f9fa;
+  margin-top: 10px;
+}
+form a{
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.img-container{
+  height: 400;
+  width: 370px;
   position: relative;
 }
 
-.first-icon{
-  top: 28px;
-  left: 300px;
-}
-
-.second-icon{
-  top: 86px;
-  left: 280px;
-}
-
-.third-icon{
-  top: 146px;
-  left: 260px;
-}
-
-
-input{
-  border-radius: 15px;
-  padding: 7px 30px;
-  width: 280px;
-  justify-self: center;
-  outline: none;
-  border: none;
-}
 
 /* ---------- media queery for less 600px size ---------- */
 
