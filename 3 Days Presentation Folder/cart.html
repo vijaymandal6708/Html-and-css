@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -20,10 +21,107 @@
         </ul>
       </nav>
       <div class="cart-container">
-        <img id="cart" src="Images/cart.png">
+        <a href="cart.html"><img id="cart" src="Images/cart.png"></a>
         <img id="menu-icon" src="Images/menu.png" alt="">
       </div>
     </div>
   </header>
+  <main>
+    <!-- ------------ cart items ------------ -->
+      <div class="use-container">
+        <table>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="cart-info">
+                <img src="Images/product-5.jpg" alt="">
+                <div>
+                  <p>JBL Ultra Headphone</p>
+                  <small>Price: ₹9,499</small>
+                  <p>Remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>9,499</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="cart-info">
+                <img src="Images/product-6.jpg" alt="">
+                <div>
+                  <p>Lenovo Ideapad Slim 5</p>
+                  <small>Price: ₹57,999</small>
+                  <p>Remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>57,999</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="cart-info">
+                <img src="Images/product-7.jpg" alt="">
+                <div>
+                  <p>LG LED Tv 32 Inch</p>
+                  <small>Price: 18,999</small>
+                  <p>Remove</p>
+                </div>
+              </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>18,999</td>
+          </tr>
+        </table>
+        <hr>
+        <div class="buy-container">
+          <pre>Total                                                       ₹86,497</pre>
+          <button class="cart-button">Buy Now</button>
+        </div>
+      </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and ios mobile phone.</p>
+          <div class="app-logo">
+            <img src="images/play-store.png">
+            <img src="images/app-store.png">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="Images/logo.jpg" alt="">
+          <p>Our Purpose Is To Deliver The Best Quality<br> Electronic Products Possible.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 - Gadget Galaxy</p>
+    </div>
+  </footer>
 </body>
 </html>
