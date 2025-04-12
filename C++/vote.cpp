@@ -3,18 +3,8 @@ using namespace std;
 int main()
 {
   int age;
-  cout<<"Enter your age:";
   cin>>age;
-
-  if(age>=18){
-    cout<<"vote";
-  }
-  else if(age>=0 && age<18){
-    cout<<"not eligible to vote";
-  }
-  else{
-    cout<<"Invalid Input";
-  }
+  (age>18)? cout<<"vote": cout<<"not vote";
 
 return 0;
 }
