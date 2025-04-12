@@ -284,7 +284,7 @@ form a{
   font-size: medium;
 } 
 .cart-info{
-  height: 150px;
+  height: 80px;
   width: 500px;
   display: flex;
   font-size: 12px;
@@ -293,7 +293,8 @@ form a{
   margin: 5px 0px;
 }
 .cart-info img{
-  width: 150px;
+  width: 100px;
+  height: 80px;
 }
 th{
   background: #8067c6;
@@ -324,7 +325,7 @@ th{
   color: #f8f9fa;
 }
 
-/* ---------- media queery for less 600px size ---------- */
+/* ---------- media queery for less 450px size ---------- */
 
 @media only screen and (max-width: 450px){
 
@@ -351,8 +352,8 @@ th{
     height: 30px;
     padding-top: 5px;
   }
-  header .navbar nav ul{
-    display: none;
+  #check:checked~ header .navbar nav ul li{
+    display: inline-block;
   }
   .row{
     grid-template-columns: auto;
