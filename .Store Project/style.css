@@ -78,6 +78,7 @@ input::placeholder{
 h1,h2,h3,h4{
   font-family: 'Poppins';
 }
+
 h1{
   font-size: calc(1.3em + 1vw);
   font-weight: var(--fw8);
@@ -94,3 +95,17 @@ h4{
   font-size: 1em;
   font-weight: var(--fw6);
 }
+
+/*  --------------------
+ *  REUSABLE SELECTOR
+ *  ------------------*/
+
+ .container{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 0.938em;
+ }
+ .column{
+  margin-left: -0.938em;
+  margin-right: -0.938em;
+ }
