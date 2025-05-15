@@ -33,6 +33,27 @@
 //   hobbies:["dance","singing"]
 // }
 
+// // update
+// person.age=67;
+
+// // add
+// person.hasAddress= true;
+// console.log(person);
+
+// spreadoperator (...)
+// const obj1= {
+//   a:1,
+//   b:2,
+// };
+
+// const obj2 = {
+//   c:3,
+//   d:4,
+// };
+
+// const obj3= {...obj1, ...obj2};
+// console.log(obj3);
+
 // console.log(person.name);
 // console.log(person['name']);
 // console.log(person.isEligible);
@@ -40,10 +61,10 @@
 // console.log(person.hobbies[1]);
 // person.greet();
 
-for(i=0; i<10; i++){
-  let a = prompt("enter value:");
-  console.log(a);
-}
+// for(i=0; i<10; i++){
+//   let a = prompt("enter value:");
+//   console.log(a);
+// }
 
 // let a = prompt("enter first value");
 // let b = prompt("enter second value");
@@ -57,3 +78,64 @@ for(i=0; i<10; i++){
 // let j = prompt("enter first value");
 
 // console.log(a);
+
+// let arr = [];
+// for(let i=0; i<10; i++){
+//   arr[i] = prompt("Enter number");
+// }
+// for(let i=0; i<10; i++){
+//   console.log(arr[i]);
+// }
+
+// array of objects
+const students = [
+  { name:"ram", id:1, course:"frontend"},
+  { name:"rohit", id:2, course:"backend"},
+  { name:"rishabh", id:3, course:"fullstack"},
+  { name:"gaurav", id:4, course:"python"},
+]
+
+console.log(students[0].course);
+console.log(students[1].name + "" +students[1].id + ""+students[1].course);
+console.log(`${students[2].name}  ${students[2].id}  ${students[2].course}`)
+
+// destructuring
+const car={
+  color:"red",
+  model:2024,
+  brand:"ford"
+};
+
+const a=car.color;
+const b=car.model;
+
+const{ color, model, brand }= car;
+
+console.log(color,model,brand);
+
+const{color:a, model:b, model:c}=car;
+console.log(a,b,c);
+
+// object to json string
+const user = {
+  name:"john",
+  id:1,
+  age:32,
+  city:"bhopal"
+};
+console.log(user);
+
+const data = JSON.stringify(user);
+console.log(data);
+
+// json string to object
+const updatedData= JSON.parse(data);
+console.log(updatedData);
+
+const library =[
+  { title:physics,
+    
+  },
+  {},
+  {},
+]
