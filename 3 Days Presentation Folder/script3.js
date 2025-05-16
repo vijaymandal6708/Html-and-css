@@ -62,4 +62,4 @@ function reverseTable(){
   }
 }
 
-reverseTable();
+reverseTable(5);
