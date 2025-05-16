@@ -63,6 +63,9 @@ console.log(account);
 
 let profile = { name:"hello", age:30};
 
+console.log("email" in profile);
+console.log(Object.keys(profile).includes("name"));
+
 // 5 Question
 
 let colors = ["red", "green"];
@@ -93,6 +96,34 @@ let nums = [ 10 , 20 , 30 , 40 , 50 ];
 console.log(nums.slice(1,3));
 
 // 10 Questions
+
+let letters = ["a","b","c","d"];
+letters.splice(1,2);
+console.log(letters);
+
+// 11 Question
+
+let arr = [1,2,3,4];
+arr.splice(2,0,"x","y");
+console.log(arr);
+
+// 12 Question
+
+let a = [1,2];
+let b = [3,4];
+
+let c = [...a, ...b];
+console.log(c);
+
+// 13 Question
+
+let seq = [1,2,3,4];
+
+console.log(seq.reverse());
+
+
+
+
 
 
 
