@@ -157,8 +157,4 @@ let myfunction = function(){
 
  myfunction2();
 
- function displayAgain(){
-  console.log("good afternoon");
- }
-
- displayAgain();
+ 
