@@ -69,36 +69,36 @@ Demo();
 
 // 1. no return no parameter
 
-function display1() {
-  console.log(10+20);
-}
+// function display1() {
+//   console.log(10+20);
+// }
 
-display1();
+// display1();
 
-// 2.return with no parameter
-function display2(){
-  return "hello";
-}
+// // 2.return with no parameter
+// function display2(){
+//   return "hello";
+// }
 
-let result = display2();
-console.log(result);
-// alert(result);
+// let result = display2();
+// console.log(result);
+// // alert(result);
 
-// 3. parameter with no return
-function display3(x,y){
-  console.log(x+y);
-}
+// // 3. parameter with no return
+// function display3(x,y){
+//   console.log(x+y);
+// }
 
-display3(10,30);
-display3(34,56);
+// display3(10,30);
+// display3(34,56);
 
-// 4. parameter with return
-function display4(x,y){
-  return x*y;
-}
+// // 4. parameter with return
+// function display4(x,y){
+//   return x*y;
+// }
 
-let ans = display4(10,20);
-console.log(ans);
+// let ans = display4(10,20);
+// console.log(ans);
 
 
 // practice
@@ -111,50 +111,88 @@ console.log(ans);
 
 // let name = prompt()
 
-function display6(){
-  return "goodafternoon";
-}
+// function display6(){
+//   return "goodafternoon";
+// }
 
-let x= display6();
-console.log(x);
+// let x= display6();
+// console.log(x);
 
-function cube(x){
-  console.log(x*x*x);
-}
+// function cube(x){
+//   console.log(x*x*x);
+// }
 
-cube(5);
+// cube(5);
 
-//object function
+// //object function
 
-function user1(person){
-  console.log(`person name is ${person.name} and age is ${person.age}`)
-}
+// function user1(person){
+//   console.log(`person name is ${person.name} and age is ${person.age}`)
+// }
 
-user1({
-  name:"john",
-  age:23,
-});
+// user1({
+//   name:"john",
+//   age:23,
+// });
 
 // function expression
 
-let myfunction = function(){
-  console.log("this is a function expression")
-};
- myfunction();
+// let myfunction = function(){
+//   console.log("this is a function expression")
+// };
+//  myfunction();
 
- function subtraction(x,y){
-  console.log(x-y);
- };
+//  function subtraction(x,y){
+//   console.log(x-y);
+//  };
 
- subtraction(5,3);
+//  subtraction(5,3);
 
- // arrow function
+//  // arrow function
 
- let myfunction2=() =>{
-   console.log("hello")
+//  let myfunction2=() =>{
+//    console.log("hello")
 
- }
+//  }
 
- myfunction2();
+//  myfunction2();
 
  
+//  ------------ Question and Answers --------------
+
+// Q1 
+// Write a program check the number is odd or even using with argument and no return
+
+// let num = prompt("Enter a number:");
+
+// function oddEve (num){
+//     if(num%2==0){
+//       console.log("Even");
+//     }
+//     else{
+//       console.log("Odd");
+//     }
+//   }
+
+//   oddEve(num);
+
+
+  //Q2
+
+  let ob = {name:"ashu", age:"40" , city:"bhopal"}
+
+  console.log(Object.keys(ob)[0]);
+
+  //Q3
+
+  let obj = {name:"ashu", age:"40", city:"bhopal", salary:"90"}
+
+  console.log(Object.keys(obj));
+
+  //Q4
+
+  
+
+
+
+
