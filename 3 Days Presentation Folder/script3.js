@@ -158,41 +158,21 @@ Demo();
 //  myfunction2();
 
  
-//  ------------ Question and Answers --------------
+// iife (immediately invoked function)
 
-// Q1 
-// Write a program check the number is odd or even using with argument and no return
+(function (){
+  var x= "hello";
+  console.log(x);
+})();
 
-// let num = prompt("Enter a number:");
-
-// function oddEve (num){
-//     if(num%2==0){
-//       console.log("Even");
-//     }
-//     else{
-//       console.log("Odd");
-//     }
-//   }
-
-//   oddEve(num);
+(function (){
+  let name = prompt("Enter your name:");
+  let age = prompt("Enter your age");
+  let course = prompt("Enter your course");
+  console.log(name);
+  console.log(age);
+  console.log(course);
+})();
 
 
-  //Q2
-
-  let ob = {name:"ashu", age:"40" , city:"bhopal"}
-
-  console.log(Object.keys(ob)[0]);
-
-  //Q3
-
-  let obj = {name:"ashu", age:"40", city:"bhopal", salary:"90"}
-
-  console.log(Object.keys(obj));
-
-  //Q4
-
-  
-
-
-
-
+// when a webpage is loaded in the browser it converts the html document into dom(document object model) dom is a tree of elements in which all the elements are treated as objects
