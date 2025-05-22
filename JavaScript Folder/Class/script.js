@@ -9,14 +9,25 @@
 
 // h1.innerHTML = `<P> Hi from para</p>`;
  
-// let h1 = document.getElementById("demo");
+let h1 = document.getElementById("demo");
 
-// h1.innerHTML = `<th><td>Name</td><td>Age</td></th>
-// <tr><td>John</td><td>24</td></tr>
-// <tr><td>Harry</td><td>36</td></tr>
-// </tr>`;
+h1.innerHTML = `
+<table border="1">
+  <th>
+    <td>Name</td>
+    <td>Age</td>
+  </th>
+  <tr>
+    <td>John</td>
+    <td>24</td>
+  </tr>
+  <tr>
+     <td>Harry</td>
+     <td>36</td>
+  </tr>
+</table>`;
 
 // console.log(h1);
 
-let img = document.getElementById("myimg");
-img.src="doc1.png";
+// let img = document.getElementById("myimg");
+// img.src="doc1.png";
