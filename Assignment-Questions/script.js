@@ -141,6 +141,7 @@ for(let item of array){
 
 
 
+
 // Question - 10
 // Write a javascript program to find the smallest value in an array?
 
@@ -156,6 +157,7 @@ for(let item of array){
 
 
 
+
 // Question - 11
 // Write a javascript program to find the sum of values of an array?
 
@@ -168,23 +170,61 @@ for(let i=0; i<array2.length; i++){
 console.log(sum);
 
 
+
+
 // Question - 12
 // Write a javascript program to check the given string is palindrome or not?
 
-let str9 = ""
+function palindrome(data){
+  let start = 0;
+  let end = data.length-1;
+  let result = true;
+  while(end>start){
+    if(data[start] != data[end]){
+      result = false;
+    }
+    start++;
+    end--;
+  }
+  return result;
+}
+
+let str10 = "eve";
+console.log(palindrome(str10));
+
+
 
 
 // Question - 13
 // Write a javascript program to find current age of any person by using his/her date of birth?
 
+function calculateAge (dob){
+  const birthDate = new Date(dob);
+  const dateDiffMs = Date.now() - birthDate.getTime();
+  const ageYear = new Date(dateDiffMs);
+  return Math.abs(ageYear.getUTCFullYear()-1970);
+};
+
+const dateOfBirth = "2000-06-02";
+console.log("Result", calculateAge(dateOfBirth));
+
 
 // Question - 14
 // How to calculate the yesterday's date in javascript?
 
+const today = new Date ();
+const yesterday = (today.getDate()-1);
+console.log(yesterday);
 
 
 // Question - 15
 // Write a javascript program to find the given year is leap year or not?
 
+let year2 = prompt("Enter the year:");
 
-
+if(year2%4==0 && year%400==0){
+  console.log("The year is leap year.");
+}
+else{
+  console.log("The year is not a leap year");
+}
