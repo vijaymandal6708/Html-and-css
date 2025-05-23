@@ -121,37 +121,57 @@ function largestWord(str){
 console.log(largestWord(input));
 
 
+
+
 // Question - 9
 // Write a javascript program to find the prime number in a given array?
- 
-function isPrime(n){
-  if(n<=1){
-    return false;
-  }
-  for(let i=2; i<n; i++){
-    if(n%i==0){
-      return false;
+
+let array=[12,89,5,3,2,4];
+
+for(let item of array){
+  for(var i=2; i<item; i++){
+    if(item%i==0){
+      break;
     }
   }
-  else{
-    return true;
+  if(item==i){
+    console.log(item);
   }
 }
-isPrime(5);
-
 
 
 
 // Question - 10
 // Write a javascript program to find the smallest value in an array?
 
+// let arr = [ 2,7,4,11,10,6 ];
+// let smallest = arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//   if(arr[i]<smallest){
+//     smallest=arr[i];
+//   }
+// }
+// console.log(smallest);
+
+
 
 // Question - 11
 // Write a javascript program to find the sum of values of an array?
 
+let array2 = [2,5,3,7,4,6,5];
+let sum=0;
+
+for(let i=0; i<array2.length; i++){
+   sum = array2[i]+sum;
+}
+console.log(sum);
+
 
 // Question - 12
 // Write a javascript program to check the given string is palindrome or not?
+
+let str9 = ""
 
 
 // Question - 13
