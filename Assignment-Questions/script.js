@@ -13,12 +13,15 @@ console.log(str2);
 
 let str3 = "!hello world";
 
+// method1
 let str4 = str3.slice(1);
 console.log(str4);
 
+// method2
 let str5 = str3.substring(1);
 console.log(str5);
 
+// method3
 let str6 = str3.substr(1);
 console.log(str6);
 
@@ -36,8 +39,8 @@ console.log(names);
 // Question - 4
 // How to remove all line breaks from a string
 
-let text = "this is\n a \nstring";
-text = text.replace(/(\n)/gm, "");
+let text = "this is\na\nstring";
+text = text.replaceAll("\n", " ");
 console.log(text);
 
 
