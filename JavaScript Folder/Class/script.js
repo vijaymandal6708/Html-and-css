@@ -37,18 +37,18 @@
 // h2.style.color = "red";
 // h2.style.backgroundColor = "yellow";
 
-let h3 = document.getElementById("para");
-// console.log(h3);
+// let h3 = document.getElementById("para");
+// // console.log(h3);
 
-h3.style.cssText = "color:pink;background-color:blue;border:10px solid red;border-radius:40px;font-size:40px;";
+// h3.style.cssText = "color:pink;background-color:blue;border:10px solid red;border-radius:40px;font-size:40px;";
 
 
-function change(){
- let h4 = document.getElementById("myinput");
-h4.value = "delhi";
-console.log(h4.value);
+// function change(){
+//  let h4 = document.getElementById("myinput");
+// h4.value = "delhi";
+// console.log(h4.value);
 
-}
+// }
 
 // function print(){
 //   let
@@ -58,8 +58,10 @@ console.log(h4.value);
 
 // The addEventListener() method attaches an event handler to the specified element.
 
-let button = document.getElementById("btn");
+// let button = document.getElementById("btn");
 
 // button.addEventListener("click",fuction(){
 //   console.log("button clicked")
 // })
+
+console.log("hello");
