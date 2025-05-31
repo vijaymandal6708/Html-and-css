@@ -337,6 +337,7 @@ const newNumbers = numbers5.filter(function (x){
 
 
  //13. What is difference b/w map() and forEach()?
+ // map is a method to create new array
 
 
 
