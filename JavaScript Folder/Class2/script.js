@@ -20,7 +20,7 @@ for(let i=1; i<=100; i++){
 }
 
 // For In Loop
-// the Javascript for in statement loops through thr properties of an object
+// the Javascript for in statement loops through the properties of an object
 
 // Syntax
 
@@ -31,14 +31,15 @@ const person = {
 };
 
 for(let x in person){
-  console.log(person[x]);
   console.log(x);
+  console.log(person[x]);
 }
  
-// in for on loop x denotes the index number of an array
+// in for in loop x denotes the index number of an array
 const numbers = [10,20,30,50];
 
 for(let x in numbers){
+  console.log(x);
   console.log(numbers[x]);
 }
 
@@ -58,6 +59,7 @@ for(let x of str1){
 }
 
 // For Each Loop
+// For Each loop needs a callback function
 // Array.forEach()
 // for each method calls a function (a callback function) once for each array element.
 
