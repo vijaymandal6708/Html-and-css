@@ -238,6 +238,103 @@ const newNumbers = numbers5.filter(function (x){
  person3.city="bhopal";
  console.log(person3);
 
+
+ // ------------------------------------------------------------------------------------------------------------------------------------
+
+ // For In Loop
+
+ let array5 = [4,5,6,7,8,9];
+ let obj3 = { name:"Atul",age:"20",city:"bhopal"}
+
+ for(let x in array5){
+  console.log(x);
+  console.log("The value is",array5[x]);
+ };
+
+ for(let x in obj3){
+  console.log(x);
+  console.log(obj3[x]);
+ };
+
+ // sum of array elements print program
+ // console outside the loop
+ 
+ sum = 0;
+ for(let x in array5){
+  sum=sum+array5[x];
+ }
+ console.log(sum);
+
+ // sum of array elements print program
+ // console inside the loop
+
+ add = 0;
+ for(let x in array5){
+  add=add+array5[x];
+  if(x==array5.length-1){
+    console.log(add);
+  }
+ }
+
+// --------------------------------------------------------------
+// For Of Loop
+
+for(let x of array5){
+  console.log(x);
+}
+
+for(let x of Object.keys(obj3)){
+  console.log(x);
+}
+
+for(let x of Object.values(obj3)){
+  console.log(x);
+}
+
+for(let x of Object.entries(obj3)){
+  console.log(x);
+}
+
+// sum of array
+
+sum1=0;
+for(let x of array5){
+  sum1 = sum1+x;
+}
+console.log(sum1);
+
+// ---------------------------------------------------------------
+// For Each Loop
+
+array5.forEach(printElement);
+
+function printElement(x){
+  console.log(x);
+}
+
+// object
+Object.entries(obj3).forEach(x => {
+  console.log(x);
+})
+
+// sum of array
+
+let sum2=0;
+array5.forEach(sumArray);
+
+function sumArray(x) {
+  sum2=sum2+x;
+}
+console.log(sum2);
+
+// ---------------------------------------------------------------
+// Map method
+
+
+
+
+
+
  
  
  
