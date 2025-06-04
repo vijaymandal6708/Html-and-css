@@ -91,14 +91,14 @@ function myfuction3(z){
 
 //Map method
 //
-const num1=[1,2,3,4,5];
-const newArray = num1.map(myfunction4);
+// const num1=[1,2,3,4,5];
+// const newArray = num1.map(myfunction4);
 
-function myfunction4(x){
-  return x*x;
-}
+// function myfunction4(x){
+//   return x*x;
+// }
 
-console.log(newArray);
+// console.log(newArray);
 
 // const fruits1 = ["apple","cherry","kiwi","grapes"];
 
@@ -112,41 +112,41 @@ console.log(newArray);
 
 // document.getElementById("demo").innerHTML = text;
 
-const person1 = [
-  {
-    name:"john",
-    age:23
-  },
-  {
-    name:"harry",
-    age:32
-  },
-  {
-    name:"odin",
-    age:53
-  },
-];
+// const person1 = [
+//   {
+//     name:"john",
+//     age:23
+//   },
+//   {
+//     name:"harry",
+//     age:32
+//   },
+//   {
+//     name:"odin",
+//     age:53
+//   },
+// ];
 
-let table = `
-<table border=1px>
-<tr>
-<th>Name</th>
-<th>Age</th>
-</tr>
-`;
+// let table = `
+// <table border=1px>
+// <tr>
+// <th>Name</th>
+// <th>Age</th>
+// </tr>
+// `;
 
-person1.map((x)=>{
-  table += `
-  <tr>
-  <td>${x.name}</td>
-  <td>${x.age}</td>
-  </tr>
-  `;
-});
+// person1.map((x)=>{
+//   table += `
+//   <tr>
+//   <td>${x.name}</td>
+//   <td>${x.age}</td>
+//   </tr>
+//   `;
+// });
 
-table += "</table>";
+// table += "</table>";
 
-document.getElementById("mytable").innerHTML = table;
+// document.getElementById("mytable").innerHTML = table;
 
 // filter
 
@@ -329,6 +329,111 @@ console.log(sum2);
 
 // ---------------------------------------------------------------
 // Map method
+
+//Map method
+
+// Example1
+
+const num1=[1,2,3,4,5];
+const newArray = num1.map(myfunction4);
+
+function myfunction4(x){
+  return x*x;
+}
+
+console.log(newArray);
+
+
+
+// Example2
+
+const fruits1 = ["apple","cherry","kiwi","grapes"];
+
+let text1 = "<ul>";
+
+fruits1.map(function (x){
+  text1 += `<li>${x}</li>`;
+});
+
+text1 += "</ul>";
+
+document.getElementById("demo").innerHTML = text1;
+
+
+// Example3
+
+const person1 = [
+  {
+    name:"john",
+    age:23
+  },
+  {
+    name:"harry",
+    age:32
+  },
+  {
+    name:"odin",
+    age:53
+  },
+];
+
+let table = `
+<table border=1px>
+<tr>
+<th>Name</th>
+<th>Age</th>
+</tr>
+`;
+
+person1.map((x)=>{
+  table += `
+  <tr>
+  <td>${x.name}</td>
+  <td>${x.age}</td>
+  </tr>
+  `;
+});
+
+table += "</table>";
+
+document.getElementById("mytable").innerHTML = table;
+
+
+// 1
+const array6 = [1,2,3,4,5];
+
+const newArray1 = array6.map(cubeFunc);
+
+function cubeFunc(x){
+  return x*x*x;
+}
+
+console.log(newArray1);
+
+// 2
+
+const array7 = ["apple","kiwi","lichee","banana"];
+
+let text2 = "<ul>";
+
+array7.map(makeUl);
+
+function makeUl(x){
+  text2 += `<li>${x}</li>`;
+};
+
+text2 += "</ul>";
+
+document.getElementById("demo1").innerHTML=text2;
+
+//-----------------------------------------------------
+
+// AddEventListener
+
+document.getElementById("add-button").addEventListener("click", function(){
+  let a2=document.getElementById("add-input").value;
+  document.getElementById("add-event").innerHTML=a2;
+})
 
 
 
