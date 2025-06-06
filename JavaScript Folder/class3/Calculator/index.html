@@ -4,42 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <table border="5" align="center" cellspacing="10px"
+  <table border="10" align="center" cellspacing="10px"
   cellpadding="10px">
     <tr>
-      <td colspan="4"></td>
+      <td class="btn" id="display"  colspan="4"></td>
     </tr>
     <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>+</td>
+      <td class="btn" onclick="dis('1')">1</td>
+      <td class="btn" onclick="dis('2')">2</td>
+      <td class="btn" onclick="dis('3')">3</td>
+      <td class="btn" onclick="dis('+')">+</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>-</td>
+      <td class="btn" onclick="dis('4')">4</td>
+      <td class="btn" onclick="dis('5')">5</td>
+      <td class="btn" onclick="dis('6')">6</td>
+      <td class="btn" onclick="dis('-')">-</td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>8</td>
-      <td>9</td>
-      <td>*</td>
+      <td class="btn" onclick="dis('7')">7</td>
+      <td class="btn" onclick="dis('8')">8</td>
+      <td class="btn" onclick="dis('9')">9</td>
+      <td class="btn" onclick="dis('*')">*</td>
     </tr>
     <tr>
-      <td>0</td>
-      <td>00</td>
-      <td>%</td>
-      <td>/</td>
+      <td class="btn" onclick="dis('0')">0</td>
+      <td class="btn" onclick="dis('00')">00</td>
+      <td class="btn" onclick="dis('%')">%</td>
+      <td class="btn" onclick="dis('/')">/</td>
     </tr>
     <tr>
-      <td>AC</td>
-      <td>DEL</td>
-      <td colspan="2">=</td>
+      <td class="btn" onclick="allClr()">AC</td>
+      <td class="btn" onclick="del()">DEL</td>
+      <td class="btn"  colspan="2" onclick="res()">=</td>
     </tr>
   </table>
+  <script src="script.js"></script>
 </body>
 </html>
