@@ -1,12 +1,24 @@
 let store="";
 
 let dis=(val)=>{
-  if(store.includes("+")==true){
-    
+  if(val=='+'||val=='-'||val=='*'||val=='/'||val=='%'){
+    if(store.slice(-1)=='+'||store.slice(-1)=='-'||store.slice(-1)=='*'||store.slice(-1)=='/'||store.slice(-1)=='%'){
+    let screen=document.querySelector("#display");
+    val="";
+    store=store+val;
+    screen.innerHTML=store;
+    }
+    else{
+     let screen=document.querySelector("#display");
+     store=store+val;
+     screen.innerHTML=store; 
+    }
   }
-  let screen=document.querySelector("#display");
-  store=store+val;
-  screen.innerHTML=store;
+  else{
+    let screen=document.querySelector("#display");
+    store=store+val;
+    screen.innerHTML=store;
+  }
 }
 
 let res=()=>{
