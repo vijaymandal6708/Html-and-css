@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <table id="table" align="center" cellspacing="15px"
+  cellpadding="10px">
+    <tr></tr>
+    <tr>
+      <th class="btn" id="display"  colspan="4"></th>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+      <td class="btn" onclick="dis('1')">1</td>
+      <td class="btn" onclick="dis('2')">2</td>
+      <td class="btn" onclick="dis('3')">3</td>
+      <td class="btn" onclick="dis('+')">+</td>
+    </tr>
+    <tr>
+      <td class="btn" onclick="dis('4')">4</td>
+      <td class="btn" onclick="dis('5')">5</td>
+      <td class="btn" onclick="dis('6')">6</td>
+      <td class="btn" onclick="dis('-')">-</td>
+    </tr>
+    <tr>
+      <td class="btn" onclick="dis('7')">7</td>
+      <td class="btn" onclick="dis('8')">8</td>
+      <td class="btn" onclick="dis('9')">9</td>
+      <td class="btn" onclick="dis('*')">*</td>
+    </tr>
+    <tr>
+      <td class="btn" onclick="dis('0')">0</td>
+      <td class="btn" onclick="dis('00')">00</td>
+      <td class="btn" onclick="dis('%')">%</td>
+      <td class="btn" onclick="dis('/')">/</td>
+    </tr>
+    <tr>
+      <td class="btn textbtn" onclick="allClr()">AC</td>
+      <td class="btn textbtn" onclick="del()">DEL</td>
+      <td class="btn" onclick="dis('.')">.</td>
+      <td class="btn" onclick="res()">=</td>
+    </tr>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>

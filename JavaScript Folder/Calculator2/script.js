@@ -37,6 +37,7 @@ let allClr=()=>{
   let screen=document.querySelector("#display");
   store="";
   screen.innerHTML=store;
+  document.querySelector('#inpt').innerText="0";
 }
 
 console.log(1000+parseInt(Math.random()*9000));
