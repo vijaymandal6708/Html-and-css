@@ -1,7 +1,56 @@
+body{
+  text-align: center;
+}
+
 .dice{
-  height: 80px;
-  width: 80px;
+  margin: auto;
+  margin-top: 30px;
+  height: 70px;
+  width: 70px;
   border: 1px solid black;
-  margin: 40px;
+  background-color: black;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 7px;
+  box-shadow: 5px 10px 5px #888888;
+}
+
+.dot{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+
+}
+
+#number4,#number6{
+  display: none;
+  grid-template-columns: auto auto;
+
+}
+
+#number5{
+  display: none;
+}
+
+.second{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px;
   
+}
+
+.container{
+  border: 2px solid black;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
 }
