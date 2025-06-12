@@ -36,7 +36,7 @@ body{
 .btn-container{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 60px;
   color: white;
 }
@@ -49,6 +49,7 @@ body{
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .disable{
