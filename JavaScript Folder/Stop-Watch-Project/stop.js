@@ -17,7 +17,7 @@ startBtn.addEventListener("click",function(){
   startBtn.classList.add("disable");
   timerId = setInterval(() => {
     time[2]++;
-    if(time[2]==100){
+    if(time[2]==60){
       time[1]++;
       time[2]=0;
     }
@@ -27,7 +27,7 @@ startBtn.addEventListener("click",function(){
     }
     console.log(time);
     displayTime();
-  }, 10);
+  }, 1000);
 })
 
 stopBtn.addEventListener("click", function(){
