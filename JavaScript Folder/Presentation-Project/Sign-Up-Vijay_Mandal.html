@@ -9,13 +9,14 @@
 </head>
 <body>
   
-    <div class="container">
+    <div class="parent-container">
+      <div class="container">
       <div class="image-container">
         <img src="chad-nathan-7zUJc2yGfwc-unsplash.jpg" alt="">
       </div>
       <div class="signup-container">
         <i class="fa-solid fa-circle-user"></i>
-        <p id="signup-text">SignUp</p>
+        <p id="signup-text">Sign Up</p>
         <form>
           <p id="errname"></p>
           <input type="text" id="name" placeholder="Enter Name">
@@ -33,8 +34,11 @@
           <input type="password" id="cpass" placeholder="Confirm Password">
 
           <input id="signup" type="submit" value="Sign-Up" onclick="return Signup()">
+
+          <span>Already have an account ? <a href="Login.html">Login</a></span>
         </form>
       </div>
+    </div>
     </div>
   <script src="Sign-Up-Vijay_Mandal.js"></script>
 </body>
