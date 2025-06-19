@@ -6,12 +6,16 @@
   <title>Home</title>
   <link rel="stylesheet" href="Home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 <body>
   <header>
+    <div class="color"></div>
     <div class="navbar">
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="logo.jpg" alt="">
+      </div>
       <ul>
         <li><a href="">Flight</a></li>
         <li><a href="">Car Rental</a></li>
@@ -20,13 +24,79 @@
         <li><a href="">Support</a></li>
         <li><a href="">About Us</a></li>
         <li><i class="fa-solid fa-cart-shopping"></i></li>
-        <li><i class="fa-solid fa-bars"></i></li>
+        <li><i class="fa-solid fa-bars" id="none"></i></li>
       </ul>
     </div>
+        <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="bord-de-piscine-complexe-complexe-hotelier-1134176.jpg" alt=""></div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
+    </div>
+  </div>
   </header>
   <main>
-    <div class="main-container"></div>
+    <div class="main-container">
+      <div class="second-slider-container">
+        <h2 id="trending">Browse by property type</h2>
+        <div class="second-slider">
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+          <div class="second-slide"></div>
+        </div>
+      </div>
+    </div>
   </main>
+  <footer></footer>
 </body>
+<script src="Home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+</script>
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      on: {
+        autoplayTimeLeft(s, time, progress) {
+          progressCircle.style.setProperty("--progress", 1 - progress);
+          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        }
+      }
+    });
+  </script>
 </html>

@@ -1,6 +1,7 @@
 *{
   padding: 0px;
   margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 form p{
@@ -11,7 +12,7 @@ form p{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(white , rgb(13, 163, 168));
+  background: radial-gradient(white , rgb(2, 71, 111));
 }
 
 .container{
@@ -55,7 +56,7 @@ form p{
 .fa-solid{
   font-size: 40px;
   font-weight: bolder;
-  color: rgb(13, 163, 168);
+  color: rgb(2, 71, 111);
 }
 
 #login-text{
@@ -90,13 +91,13 @@ form span{
 }
 
 form a{
-  color: rgb(13, 163, 168);
+  color: rgb(2, 71, 111);
 }
 
 #signup{
   height: 35px;
   width: 150px;
-  background-color: rgb(13, 163, 168);
+  background-color: rgb(2, 71, 111);
   color: white;
   align-self: center;
   justify-self: center;
