@@ -1,11 +1,18 @@
 {
   "hotel": [
     {
-      "name":"vijay",
-      "number":"6265826714"
+      "name": "vijay",
+      "number": "6265826714",
+      "city": "Bhopal",
+      "age": "23",
+      "id": "7d5f"
     },
     {
-      "name":"aditya"
+      "name": "aditya",
+      "number": "6265826714",
+      "city": "Bhopal",
+      "age": "23",
+      "id": "db74"
     }
   ]
 }

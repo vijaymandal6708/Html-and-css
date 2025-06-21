@@ -168,12 +168,17 @@ header{
   cursor: pointer;
 }
 
-.arrow img{
-  height: 50px;
+.left1{
+  margin-top: -100px;
 }
 
-.right{
+.right1{
+  margin-top: -100px;
   transform: rotate(180deg);
+}
+
+.arrow img{
+  height: 50px;
 }
 
 .frame{
@@ -182,19 +187,19 @@ header{
   overflow: hidden;
 }
 
-.slider{
+.slider1{
   display: flex;
   gap: 25px;
   transition: all 1s ease;
 }
 
-.slider img{
+.slider1 img{
   height: 200px;
   min-width: 301px;
   border-radius: 10px;
 }
 
-.image{
+.image1{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -212,13 +217,45 @@ header{
   margin-left: 5px;
 }
 
+/* --------------- Search Section ---------------- */
+
+.next-stay-container{
+  height: 25vh;
+  width: 100vw;
+  background-color: rgb(2, 71, 111);
+  padding: 40px 120px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.next-stay-container h2, p{
+  color: white;
+  margin-bottom: 7px;
+  
+}
+
+.stay-input-container{
+  height: 8vh;
+  width: 80vw;
+  background-color: white;
+  border: 3px solid orange;
+  border-radius: 10px;
+  justify-self: center;
+  margin-top: -70px;
+}
+
 /* ----------Deals of the weekend Section---------- */
 
 .weekend-deals-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 100%;
+}
+
+.heading3{
+  margin: 20px 0px 25px -1010px;
 }
 
 .row{
@@ -228,7 +265,7 @@ header{
 
 .deals{
   height: 410px;
-  width: 310px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -237,8 +274,8 @@ header{
 }
 
 .deals img{
-  min-height: 247px;
-  min-width: 310px;
+  max-height: 237px;
+  min-width: 300px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -290,6 +327,7 @@ header{
 
 .text-container span{
   font-size: 12px;
+  cursor: pointer;
 }
 
 .mrp-price{
@@ -301,8 +339,85 @@ header{
   font-size: 12px;
 }
 
-.title-text{
-  font-size: 18px;
+/* ----------------slider3---------------- */
+
+.third-slider-container{
+  height: 30vh;
+  width: 98.9vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.heading2{
+  margin: 10px 0px 5px 120px;
+}
+
+.heading2-para{
+  margin: 0px 0px 25px 120px;
+  font-size: 12px;
+}
+
+.third-slider{
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 70px;
+}
+
+.arrow{
+  height: 50px;
+  cursor: pointer;
+}
+
+.arrow img{
+  height: 50px;
+}
+
+.left2{
+  margin-top: -170px;
+}
+
+.right2{
+  transform: rotate(180deg);
+  margin-top: -170px;
+}
+
+.frame{
+  height: 300px;
+  width: 1420px;
+  overflow: hidden;
+}
+
+.slider2{
+  display: flex;
+  gap: 25px;
+  transition: all 1s ease;
+}
+
+.slider2 img{
+  height: 120px;
+  min-width: 192px;
+  border-radius: 10px;
+}
+
+.image2{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-container{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.img-container span{
+  font-weight: 600;
+  margin-left: 5px;
 }
 
 
