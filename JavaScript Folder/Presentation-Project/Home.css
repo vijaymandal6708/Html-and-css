@@ -29,7 +29,7 @@ header{
 
 .navbar ul{
   display: flex;
-  width: 50%;
+  width: 40vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -236,13 +236,93 @@ header{
 
 .stay-input-container{
   height: 8vh;
-  width: 80vw;
+  width: 82vw;
   background-color: white;
-  border: 3px solid orange;
-  border-radius: 10px;
+  border: 2px solid orange;
+  border-radius: 5px;
   justify-self: center;
   margin-top: -70px;
+  display: flex;
+  font-size: 14px;
 }
+
+.where-going-container{
+  height: 8vh;
+  width: 23vw;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  gap: 7px;
+}
+
+.location-image{
+  height: 30px;
+  width: 30px;
+  color: rgb(2, 71, 111);
+}
+
+#location-select{
+  width: 103px;
+}
+
+.checkIn-checkOut-container{
+  height: 8vh;
+  width: 30vw;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.checkIn-checkOut-container input{
+  width: 110px;
+}
+
+#calender-image{
+  height: 30px;
+  width: 30px;
+}
+
+.adult-room-container{
+  height: 8vh;
+  width: 22vw;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0px 15px;
+}
+
+.adult-room-container input{
+  width: 33px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.final-search-container{
+  height: 8vh;
+  width: 7vw;
+  border: 2px solid orange;
+  background-color: rgb(2, 71, 111);
+  color: white;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+
 
 /* ----------Deals of the weekend Section---------- */
 

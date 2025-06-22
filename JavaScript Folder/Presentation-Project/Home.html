@@ -17,12 +17,11 @@
         <img src="logo.jpg" alt="">
       </div>
       <ul>
-        <li><a href="">Flight</a></li>
-        <li><a href="">Car Rental</a></li>
         <li><a href="">List your property</a></li>
         <li><a href="">Coupons and Deals</a></li>
         <li><a href="">Support</a></li>
-        <li><a href="">About Us</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Log out</a></li>
         <li><i class="fa-solid fa-cart-shopping"></i></li>
         <li><i class="fa-solid fa-bars" id="none"></i></li>
       </ul>
@@ -114,10 +113,130 @@
       <section id="search-section">
         <div class="next-stay-container">
           <h2>Find your next stay</h2>
-          <p>Search hotels,homes and many more on low,prices</p>
+          <p>Search hotels,homes and many more on low prices</p>
         </div>  <!--next-stay-container-->
         <div class="stay-input-container">
-          
+           <div class="where-going-container">
+              <img src="location.png" class="location-image">
+              <span>Where are you going?</span>
+              <br>
+              <select name="" id="location-select">
+                <option value="">Select place</option>
+                <option value="">Agra</option>
+                <option value="">Ahmedabad</option>
+                <option value="">Ahmednagar</option>
+                <option value="">Aizawl</option>
+                <option value="">Ajmer</option>
+                <option value="">Allahabad</option>
+                <option value="">Alwar</option>
+                <option value="">Amravati</option>
+                <option value="">Ambala</option>
+                <option value="">Amritsar</option>
+                <option value="">Anand</option>
+                <option value="">Anantapur</option>
+                <option value="">Aurangabad</option>
+                <option value="">Bareli</option>
+                <option value="">Belagavi</option>
+                <option value="">Bengaluru</option>
+                <option value="">Bettiah</option>
+                <option value="">Bhagalpur</option>
+                <option value="">Bhilai</option>
+                <option value="">Bhiwandi</option>
+                <option value="">Bhopal</option>
+                <option value="">Bhuwaneshwar</option>
+                <option value="">Bikaner</option>
+                <option value="">Bilaspur</option>
+                <option value="">Bokaro</option>
+                <option value="">Chandigarh</option>
+                <option value="">Chennai</option>
+                <option value="">Coimbatore</option>
+                <option value="">Cuttack</option>
+                <option value="">Darbhanga</option>
+                <option value="">Devangere</option>
+                <option value="">Dehradun</option>
+                <option value="">Delhi</option>
+                <option value="">Dhanbad</option>
+                <option value="">Dharwad</option>
+                <option value="">Dibrugarh</option>
+                <option value="">Durgapur</option>
+                <option value="">Erode</option>
+                <option value="">Faridabad</option>
+                <option value="">Firozabad</option>
+                <option value="">Ghaziyabad</option>
+                <option value="">Gaya</option>
+                <option value="">Gorakhpur</option>
+                <option value="">Gulbarga</option>
+                <option value="">Guntur</option>
+                <option value="">Gurgaon</option>
+                <option value="">Guwahati</option>
+                <option value="">Gwalior</option>
+                <option value="">Hubli</option>
+                <option value="">Hydrabad</option>
+                <option value="">Imphal</option>
+                <option value="">Indore</option>
+                <option value="">jabalpur</option>
+                <option value="">Jaipur</option>
+                <option value="">Jalandhar</option>
+                <option value="">Jalgaon</option>
+                <option value="">Jammu</option>
+                <option value="">Jamnagar</option>
+                <option value="">Jamshedpur</option>
+                <option value="">Jhansi</option>
+                <option value="">Jodhpur</option>
+                <option value="">Junagarh</option>
+                <option value="">Kakinada</option>
+                <option value="">Kalyan</option>
+                <option value="">Kanchipuram</option>
+                <option value="">Kannur</option>
+                <option value="">Kanpur</option>
+                <option value="">Kochi</option>
+                <option value="">Kolar</option>
+                <option value="">Kolkata</option>
+                <option value="">Kollam</option>
+                <option value="">Kota</option>
+                <option value="">Kottayam</option>
+                <option value="">Kozhikode</option>
+                <option value="">Kurnool</option>
+                <option value="">Lucknow</option>
+                <option value="">Ludhiana</option>
+                <option value="">Madurai</option>
+                <option value="">Malappuram</option>
+                <option value="">Manglore</option>
+                <option value="">Mathura</option>
+                <option value="">Meerut</option>
+                <option value="">Morabad</option>
+                <option value="">Mumbai</option>
+                <option value="">Mysore</option>
+                <option value="">Nagpur</option>
+                <option value="">Nanded</option>
+                <option value="">Nashik</option>
+                <option value="">Nellore</option>
+                <option value="">New Delhi</option>
+                <option value="">Noida</option>
+                <option value="">Patna</option>
+                <option value="">Pondicherry</option>
+                <option value="">Pune</option>
+                <option value="">Raipur</option>
+                <option value="">Rajkot</option>
+                <option value="">Ranchi</option>
+                <option value="">Salem</option>
+                <option value="">Salapur</option>
+                <option value="">Itarsi</option>
+              </select>
+           </div>
+           <div class="checkIn-checkOut-container">
+             <img src="calendar.png" id="calender-image">
+             Check-in :<input type="date">
+             Check-out :<input type="date" placeholder="Check-out Date">
+           </div>
+           <div class="adult-room-container">
+              Adults:<input type="number" name="" value="1">
+              Childrens:<input type="number" name="" value="1">
+              Rooms:<input type="number" name="" value="1">
+           </div>
+           <div class="final-search-container">
+             <span>Search</span>
+           </div>
         </div> <!--stay-input-container-->
       </section> <!--search section-->
       <section>
@@ -373,8 +492,7 @@
         </div>
       </div>
       </section>
-      
-    </div>
+    </div> <!--main-container-->
   </main>
   <footer></footer>
 </body>
