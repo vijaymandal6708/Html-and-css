@@ -21,8 +21,8 @@
         <li><a href="">Coupons and Deals</a></li>
         <li><a href="">Support</a></li>
         <li><a href="">About us</a></li>
-        <li><a href="">Log out</a></li>
-        <li><i class="fa-solid fa-cart-shopping"></i></li>
+        <li><a href="" onclick="return LogOut()" style="color: red;">Log out</a></li>
+        <li><a href="Hotel-detail.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
         <li><i class="fa-solid fa-bars" id="none"></i></li>
       </ul>
     </div>
@@ -226,8 +226,8 @@
            </div>
            <div class="checkIn-checkOut-container">
              <img src="calendar.png" id="calender-image">
-             Check-in :<input type="date">
-             Check-out :<input type="date" placeholder="Check-out Date">
+             Check-in :<input type="date" id="date1">
+             Check-out :<input type="date" id="date2" placeholder="Check-out Date">
            </div>
            <div class="adult-room-container">
               Adults:<input type="number" name="" value="1">
@@ -492,11 +492,427 @@
         </div>
       </div>
       </section>
+      <section id="Hot-hotel-deals">
+        <div class="weekend-deals-container">
+          <h2 class="heading3 heading4">Hot Hotel deals right now</h2>
+          <div class="deals-container">
+            <div class="row">
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel1.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title-text">Silver Sands Serenity</span> <br>
+                  <span class="place">Candolim, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">6.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">144 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">per night</span>
+                    <span class="mrp-price">&nbsp;₹7,613</span>
+                    <span class="offer-price">&nbsp;₹2,307</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel2.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">The Ananta Udaipur</span> <br>
+                  <span class="place">Udaipur, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.7</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">115 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹6,400</span>
+                    <span class="offer-price">&nbsp;₹4,416</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel3.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Lotus Sutra</span> <br>
+                  <span class="place">Morjim, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">8.1</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">750 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹13,876</span>
+                    <span class="offer-price">&nbsp;₹8,460</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel4.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Thulhagiri Island Resort & Spa</span> <br>
+                  <span class="place">South Male, Maldives</span>
+                  <div class="review-container">
+                    <div class="review-stars">6.5</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">103 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹5,451</span>
+                    <span class="offer-price">&nbsp;₹2,944</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->  
+            </div> <!--row-->
+            <div class="row">
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel5.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Tourist Inn Grand</span>
+                  <br>
+                  <span class="place">South Male, Maldives</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">85 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹15,692</span>
+                    <span class="offer-price">&nbsp;₹6,277</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel6.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Treebo The Pavilion, Railway Station</span>
+                  <br>
+                  <span class="place">Nagpur, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.4</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">217 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹13,968</span>
+                    <span class="offer-price">&nbsp;₹5,587</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel7.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Super Townhouse Nagpur</span>
+                  <br>
+                  <span class="place">Nagpur, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.3</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">74 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹5,813</span>
+                    <span class="offer-price">&nbsp;₹3,546</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel8.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">FabHotel Rajnandani Residency</span>
+                  <br>
+                  <span class="place">Indore, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">6.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">232 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹6,681</span>
+                    <span class="offer-price">&nbsp;₹3,207</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->  
+            </div> <!--row-->
+            <div class="row">
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel9.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Crown Beach Villas</span>
+                  <br>
+                  <span class="place">Thulhagiri, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">85 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹15,692</span>
+                    <span class="offer-price">&nbsp;₹6,277</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel10.webp" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Coconut Tree Hulhuvilla Beach</span>
+                  <br>
+                  <span class="place">Nord Male Atoli, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.4</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">217 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹13,968</span>
+                    <span class="offer-price">&nbsp;₹5,587</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel11.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Aqua Sunset</span>
+                  <br>
+                  <span class="place">Maafushi, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.3</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">74 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹5,813</span>
+                    <span class="offer-price">&nbsp;₹3,546</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="hot-hotel12.avif" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Paralian Hulhumale</span>
+                  <br>
+                  <span class="place">Nord Male Atoli, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">6.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">232 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹6,681</span>
+                    <span class="offer-price">&nbsp;₹3,207</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->  
+            </div> <!--row-->
+            <div class="row">
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="weekend-image5.jpg" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Treebo Premium Omni Residency</span>
+                  <br>
+                  <span class="place">Indore, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">85 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹15,692</span>
+                    <span class="offer-price">&nbsp;₹6,277</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="weekend-image6.jpg" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Treebo The Pavilion, Railway Station</span>
+                  <br>
+                  <span class="place">Nagpur, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.4</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">217 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹13,968</span>
+                    <span class="offer-price">&nbsp;₹5,587</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="weekend-image7.jpg" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">Super Townhouse Nagpur</span>
+                  <br>
+                  <span class="place">Nagpur, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">7.3</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">74 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Limited-time Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹5,813</span>
+                    <span class="offer-price">&nbsp;₹3,546</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->
+              <div class="deals">
+                 <div class="deals-image-container">
+                  <img src="weekend-image8.jpg" alt="">
+                 </div>
+                 <div class="text-container">
+                  <span class="title">FabHotel Rajnandani Residency</span>
+                  <br>
+                  <span class="place">Indore, India</span>
+                  <div class="review-container">
+                    <div class="review-stars">6.9</div>
+                    <div class="review-details">
+                      <span class="review-score">Review score</span>
+                      <span class="review-count">232 reviews</span>
+                      </div> <!--review-details-->
+                  </div> <!--review-container-->
+                  <div class="deal-type">Grab Deal</div>
+                  <div class="price">
+                    <span class="night-text">2 nights</span>
+                    <span class="mrp-price">&nbsp;₹6,681</span>
+                    <span class="offer-price">&nbsp;₹3,207</span>
+                  </div> <!--price-->
+                 </div> <!--text-container-->
+              </div> <!--deals-->  
+            </div> <!--row-->
+          </div> <!--deals-container-->
+        </div> <!--weekend-deals-container-->
+      </section>
     </div> <!--main-container-->
   </main>
-  <footer></footer>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and ios mobile phone.</p>
+          <div class="app-logo">
+            <img src="play-store.png">
+            <img src="app-store.png">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="logo.jpg" alt="">
+          <p>Our Purpose is to provide potential customers with a transparent and itemized breakdown of the cost associated with their desired stay.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 - Paradise Hotels</p>
+    </div>
+  </footer>
 </body>
 <script src="Home.js"></script>
+<script src="Login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
 </script>
 <script>

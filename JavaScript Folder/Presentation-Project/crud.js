@@ -34,3 +34,42 @@ let Del=(id)=>{
   
   fetch(url,{method:"DELETE"})
 }
+
+let Fetch2Data=async()=>{
+  let res=await fetch("http://localhost:3000/hotel",{method:"GET"});
+
+  let data=await res.json();
+
+  console.log(data);
+}
+
+let ins=()=>{
+
+  let Name=document.querySelector("#name").value;
+  let Number=document.querySelector("#number").value;
+  let City=document.querySelector("#city").value;
+  let Age=document.querySelector("#age").value;
+
+  let url =`http://localhost:3000/hotel`;
+
+  fetch(url, {
+    method:"POST",
+
+    headers:{
+      "Content-type":"application/json"
+    },
+
+    body: JSON.stringify(
+      {
+        name:Name,
+        number:Number,
+        city:City,
+        age:Age
+
+      }
+    )
+
+
+  })
+
+}
