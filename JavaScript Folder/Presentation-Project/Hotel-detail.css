@@ -4,6 +4,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
 header{
   display: flex;
   flex-direction: column;
@@ -186,14 +193,25 @@ header{
 
 /* ------------ Product Detail Section ------------- */
 
-.product-detail-container{
+.product-detail-container1{
   padding: 30px 30px 0px 30px;
   width: 79vw;
-  height: 100vw;
-  margin-top: 50px;
+  height: 15vh;
+  margin-top: 10px;
   /* border: 1px solid black; */
   box-sizing: border-box;
 }
+
+.product-detail-container2{
+  padding: 30px 30px 0px 30px;
+  width: 79vw;
+  height: 95vh;
+  display: flex;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  gap: 30px;
+}
+
 
 .bold{
   font-weight: bold;
@@ -211,8 +229,9 @@ header{
 
 .big-image-container{
   min-height: 68vh;
-  min-width: 79vw;
+  min-width: 50vw;
   display: flex;
+  flex-direction: column;
   gap: 40px;
   /* border: 1px solid black; */
 }
@@ -223,7 +242,7 @@ header{
 }
 
 .hotel-details-container{
-  height: 51vh;
+  height: 60vh;
   width:19vw;
   /* border: 1px solid black; */
   display: flex;
@@ -232,10 +251,10 @@ header{
 }
 
 .review-container{
-  height: 8vh;
+  height: 6.5vh;
   width: 100%;
-  border: 1px solid black;
-  border-bottom: 0px solid black;
+  border: 1px solid lightgrey;
+  border-bottom: 0px solid lightgrey;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
@@ -248,8 +267,8 @@ header{
 }
 
 .review-stars{
-  height: 35px;
-  width: 35px;
+  height: 32px;
+  width: 32px;
   border-radius: 5px 5px 5px 0px;
   color: white;
   background-color: rgb(2, 71, 111);
@@ -264,21 +283,27 @@ header{
 }
 
 .customer-review-container{
-  height: 38vh;
+  height: 47vh;
   width: 100%;
-  padding: 0px 15px;
+  padding: 16px 15px 13px 15px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-bottom: 0px solid black;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  border-bottom: 0px solid lightgrey;
   box-sizing: border-box;
+}
+
+#customer-reviews-heading{
+  align-self: center;
+  text-decoration: underline;
 }
 
 .small-image-container{
   height: 15vh;
   width: 53vw;
   /* border: 1px solid black; */
-  margin-top: 40px;
+  /* margin-top: 40px; */
   display: flex;
   justify-content: space-between;
 }
@@ -323,15 +348,188 @@ header{
 }
 
 .great-location-container{
-  height: 58px;
+  height: 6.5vh;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+#review-stars2{
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgb(2, 71, 111);
+  border-radius: 5px 5px 5px 0px;
+  color: rgb(2, 71, 111);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-section-container{
+  height: 95vh;
+  width: 19vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-container{
+  height: 29vh;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.map-container iframe{
+  height: 29vh;
+  width: 99.7%;
+}
+
+/* -------- property-detail-container ------- */
+
+.property-detail-container{
+  height: 55vh;
+  width: 79vw;
+  margin-top: 20px;
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 2vw;
+  box-sizing: border-box;
+  font-size: 13.5px;
+  line-height: 23px;
+}
+
+.left-container{
+  height: 55vh;
+  flex-basis: 70%;
+  /* border: 1px solid black; */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right-container{
+  height: 52vh;
+  flex-basis: 24%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.right-container .div{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 6.2vh;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.right-container img{
+  height: 30px;
+  width: 30px;
+}
+
+.save-this-property{
+  margin-top: 15px;
+  height: 6vh;
+  width: 100%;
+  border: 1px solid rgb(2, 71, 111);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(2, 71, 111);
+  font-weight: 545;
+  gap: 15px;
+}
+
+/* -------------- Footer --------------- */
+
+footer{
+  background: rgb(2, 71, 111);
+  color: white;
+  font-size: 14px;
+  padding: 60px 0px 20px;
+  width: 100%;
+}
+
+footer p{
+  color: white;
+}
+
+footer h3{
+  color: white;
+  margin-bottom: 20px;
+}
+
+.row{
+  display: flex;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col-1{
+  flex-basis: 30%;
+  margin-left: 70px;
+}
+
+.footer-col-2{
+  flex: 1;
+  text-align: center;
+  margin-left: -40px;
+}
+
+.footer-col-2 img{
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-col-3, .footer-col-4{
+  flex-basis: 12%;
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.app-logo{
+  margin-top: 20px;
+}
+
+.app-logo img{
+  width: 140px;
+}
+
+footer hr{
+  border: none;
+  background: #555;
+  height: 1px;
+  margin: 20px 0px;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.menu-icon{
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
 
