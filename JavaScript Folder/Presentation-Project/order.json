@@ -1,0 +1,31 @@
+{
+  "hotel": [
+    {
+      "id": "9a37",
+      "City": "Nagpur",
+      "CheckIn": "2025-06-28",
+      "CheckOut": "2025-06-28",
+      "Adult": "1",
+      "Children": "2",
+      "Rooms": "3"
+    },
+    {
+      "id": "a513",
+      "City": "Nagpur",
+      "CheckIn": "2025-06-28",
+      "CheckOut": "2025-06-28",
+      "Adult": "1",
+      "Children": "2",
+      "Rooms": "3"
+    },
+    {
+      "id": "1103",
+      "City": "Nagpur",
+      "CheckIn": "",
+      "CheckOut": "",
+      "Adult": "1",
+      "Children": "1",
+      "Rooms": "1"
+    }
+  ]
+}

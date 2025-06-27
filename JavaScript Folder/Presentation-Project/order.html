@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="order.css">
+  <link rel="stylesheet" href="Home.css">
+</head>
+<body onload="FetchData()"
+
+>
+  <div class="color"></div>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="">
+      </div>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="">List your property</a></li>
+        <li><a href="">Coupons and Deals</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="" onclick="return LogOut()" style="color: red;">Log out</a></li>
+      </ul>
+    </div> <br> <br>
+    <h2 id="order-heading">Your Orders</h2> <br> <br>
+  
+  Search <input type="text" id="searchinp" oninput="searchh()"> <br> <br>
+
+  <table border="1" align="center" cellspacing="6px" style="cursor: pointer;">
+    <thead>
+      
+        <th>City</th>
+        <th>Check in Date</th>
+        <th>Check out Date</th>
+        <th>Adult count</th>
+        <th>Children count</th>
+        <th>Rooms</th>
+        <th>Total price</th>
+        <th>Order Date</th>
+        <th>Edit</th>
+        <th>delete</th>
+      </tr>
+    </thead>
+    <tbody id="display">
+
+    </tbody>
+  </table> <br> <br>
+  <div id="formShow";></div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and ios mobile phone.</p>
+          <div class="app-logo">
+            <img src="images/play-store.png">
+            <img src="images/app-store.png">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="images/logo.jpg" alt="">
+          <p>Our Purpose is to provide potential customers with a transparent and itemized breakdown of the cost associated with their desired stay.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 - Paradise Hotels</p>
+    </div>
+  </footer>
+</body>
+<script src="order.js"></script>
+</html>

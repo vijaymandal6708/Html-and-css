@@ -13,16 +13,16 @@
     <div class="color"></div>
     <div class="navbar">
       <div class="logo">
-        <img src="logo.jpg" alt="">
+        <img src="images/logo.jpg" alt="">
       </div>
       <ul>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="">List your property</a></li>
         <li><a href="">Coupons and Deals</a></li>
         <li><a href="">Support</a></li>
         <li><a href="">About us</a></li>
-        <li><a href="" onclick="return LogOut()">Log out</a></li>
-        <li><i class="fa-solid fa-cart-shopping"></i></li>
-        <li><i class="fa-solid fa-bars" id="none"></i></li>
+        <li><a href="" onclick="return LogOut()" style="color: red;">Log out</a></li>
+        <li><a href="order.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
       </ul>
     </div>
     <section id="search-section">
@@ -32,125 +32,26 @@
         </div>  <!--next-stay-container-->
         <div class="stay-input-container">
            <div class="where-going-container">
-              <img src="location.png" class="location-image">
+              <img src="images/location.png" class="location-image">
               <span>Where are you going?</span>
               <br>
               <select name="" id="location-select">
-                <option value="">Select place</option>
-                <option value="">Agra</option>
-                <option value="">Ahmedabad</option>
-                <option value="">Ahmednagar</option>
-                <option value="">Aizawl</option>
-                <option value="">Ajmer</option>
-                <option value="">Allahabad</option>
-                <option value="">Alwar</option>
-                <option value="">Amravati</option>
-                <option value="">Ambala</option>
-                <option value="">Amritsar</option>
-                <option value="">Anand</option>
-                <option value="">Anantapur</option>
-                <option value="">Aurangabad</option>
-                <option value="">Bareli</option>
-                <option value="">Belagavi</option>
-                <option value="">Bengaluru</option>
-                <option value="">Bettiah</option>
-                <option value="">Bhagalpur</option>
-                <option value="">Bhilai</option>
-                <option value="">Bhiwandi</option>
-                <option value="">Bhopal</option>
-                <option value="">Bhuwaneshwar</option>
-                <option value="">Bikaner</option>
-                <option value="">Bilaspur</option>
-                <option value="">Bokaro</option>
-                <option value="">Chandigarh</option>
-                <option value="">Chennai</option>
-                <option value="">Coimbatore</option>
-                <option value="">Cuttack</option>
-                <option value="">Darbhanga</option>
-                <option value="">Devangere</option>
-                <option value="">Dehradun</option>
-                <option value="">Delhi</option>
-                <option value="">Dhanbad</option>
-                <option value="">Dharwad</option>
-                <option value="">Dibrugarh</option>
-                <option value="">Durgapur</option>
-                <option value="">Erode</option>
-                <option value="">Faridabad</option>
-                <option value="">Firozabad</option>
-                <option value="">Ghaziyabad</option>
-                <option value="">Gaya</option>
-                <option value="">Gorakhpur</option>
-                <option value="">Gulbarga</option>
-                <option value="">Guntur</option>
-                <option value="">Gurgaon</option>
-                <option value="">Guwahati</option>
-                <option value="">Gwalior</option>
-                <option value="">Hubli</option>
-                <option value="">Hydrabad</option>
-                <option value="">Imphal</option>
-                <option value="">Indore</option>
-                <option value="">jabalpur</option>
-                <option value="">Jaipur</option>
-                <option value="">Jalandhar</option>
-                <option value="">Jalgaon</option>
-                <option value="">Jammu</option>
-                <option value="">Jamnagar</option>
-                <option value="">Jamshedpur</option>
-                <option value="">Jhansi</option>
-                <option value="">Jodhpur</option>
-                <option value="">Junagarh</option>
-                <option value="">Kakinada</option>
-                <option value="">Kalyan</option>
-                <option value="">Kanchipuram</option>
-                <option value="">Kannur</option>
-                <option value="">Kanpur</option>
-                <option value="">Kochi</option>
-                <option value="">Kolar</option>
-                <option value="">Kolkata</option>
-                <option value="">Kollam</option>
-                <option value="">Kota</option>
-                <option value="">Kottayam</option>
-                <option value="">Kozhikode</option>
-                <option value="">Kurnool</option>
-                <option value="">Lucknow</option>
-                <option value="">Ludhiana</option>
-                <option value="">Madurai</option>
-                <option value="">Malappuram</option>
-                <option value="">Manglore</option>
-                <option value="">Mathura</option>
-                <option value="">Meerut</option>
-                <option value="">Morabad</option>
-                <option value="">Mumbai</option>
-                <option value="">Mysore</option>
-                <option value="">Nagpur</option>
-                <option value="">Nanded</option>
-                <option value="">Nashik</option>
-                <option value="">Nellore</option>
-                <option value="">New Delhi</option>
-                <option value="">Noida</option>
-                <option value="">Patna</option>
-                <option value="">Pondicherry</option>
-                <option value="">Pune</option>
-                <option value="">Raipur</option>
-                <option value="">Rajkot</option>
-                <option value="">Ranchi</option>
-                <option value="">Salem</option>
-                <option value="">Salapur</option>
-                <option value="">Itarsi</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Bhopal">Bhopal</option>
               </select>
            </div>
            <div class="checkIn-checkOut-container">
-             <img src="calendar.png" id="calender-image">
-             Check-in :<input type="date">
-             Check-out :<input type="date" placeholder="Check-out Date">
+             <img src="images/calendar.png" id="calender-image">
+             Check-in :<input type="date" id="check-in">
+             Check-out :<input type="date" id="check-out">
            </div>
            <div class="adult-room-container">
-              Adults:<input type="number" name="" value="1">
-              Childrens:<input type="number" name="" value="1">
-              Rooms:<input type="number" name="" value="1">
+              Adults:<input type="number" name="" value="1" id="adult">
+              Childrens:<input type="number" name="" value="1" id="children">
+              Rooms:<input type="number" name="" value="1" id="rooms">
            </div>
-           <div class="final-search-container">
-             <span>Search</span>
+           <div class="final-search-container" onclick="return ins()">
+             <span >Book</span>
            </div>
         </div> <!--stay-input-container-->
       </section> <!--search section-->
@@ -159,20 +60,20 @@
     <section id="header-container">
       <div class="product-detail-container1">
         <h2 id="detail-heading">Super Townhouse Nagpur Railway Station</h2> <br>
-        <img src="location.png" id="location-image">
+        <img src="images/location.png" id="location-image">
         <span>Opposite Mayo Hospital, Central Avenue Road, Bajaria, Nagpur, 440018, Nagpur, India</span> <br> <br>
     </div> <!--product-detail-container1-->
     </section>
     <section id="hotel-detail-container">
       <div class="product-detail-container2">
         <div class="big-image-container">
-          <img src="detail1.jpg" alt="">
+          <img src="images/detail1.jpg" alt="">
           <div class="small-image-container">
-            <img src="detail2.jpg" alt="">
-            <img src="detail3.jpg" alt="">
-            <img src="detail4.jpg" alt="">
-            <img src="detail5.jpg" alt="">
-            <img src="detail6.jpg" alt="">
+            <img src="images/detail2.jpg" alt="">
+            <img src="images/detail3.jpg" alt="">
+            <img src="images/detail4.jpg" alt="">
+            <img src="images/detail5.jpg" alt="">
+            <img src="images/detail6.jpg" alt="">
           </div> <!--small-image-container-->
         </div> <!--big-image-container  -->
         <div class="review-section-container">
@@ -194,7 +95,7 @@
                   <div class="customer-name-logo">D</div>
                   <span>Dipika Soni</span>
                   <div class="customer-place">
-                    <img src="world.png" alt="" id="india-image">
+                    <img src="images/world.png" alt="" id="india-image">
                     <span>India</span>
                   </div>
                 </div> <br>
@@ -203,7 +104,7 @@
                   <div class="customer-name-logo">A</div>
                   <span>Abdulhamid</span>
                   <div class="customer-place">
-                    <img src="world.png" alt="" id="india-image">
+                    <img src="images/world.png" alt="" id="india-image">
                     <span>India</span>
                   </div>
                 </div> <br>
@@ -212,7 +113,7 @@
                   <div class="customer-name-logo">A</div>
                   <span>Atul Rajput</span>
                   <div class="customer-place">
-                    <img src="world.png" alt="" id="india-image">
+                    <img src="images/world.png" alt="" id="india-image">
                     <span>India</span>
                   </div>
                   <br>
@@ -254,27 +155,27 @@
         <div class="right-container">
           <h2>Property highlights</h2> <br>
           <div class="div">
-            <img src="coffee-cup.png" alt="">
+            <img src="images/coffee-cup.png" alt="">
             <h3>Breakfast available</h3>
           </div>
           <div class="div">
-            <img src="ocean.png" alt="">
+            <img src="images/ocean.png" alt="">
             <h3>Views</h3>
           </div>
           <div class="div">
-            <img src="wifi.png" alt="">
+            <img src="images/wifi.png" alt="">
             <h3>Free WiFi</h3>
           </div>
           <div class="div">
-            <img src="pet.png" alt="">
+            <img src="images/pet.png" alt="">
             <h3>Pet friendly</h3>
           </div>
           <div class="div">
-            <img src="Room Service.png" alt="">
+            <img src="images/Room Service.png" alt="">
             <h3>Room Service</h3>
           </div>
           <div class="save-this-property">
-            <img src="Heart.png" alt="">
+            <img src="images/Heart.png" alt="">
             <span>Save this Property</span>
           </div>
         </div>
@@ -288,12 +189,12 @@
           <h3>Download Our App</h3>
           <p>Download App for Android and ios mobile phone.</p>
           <div class="app-logo">
-            <img src="play-store.png">
-            <img src="app-store.png">
+            <img src="images/play-store.png">
+            <img src="images/app-store.png">
           </div>
         </div>
         <div class="footer-col-2">
-          <img src="logo.jpg" alt="">
+          <img src="images/logo.jpg" alt="">
           <p>Our Purpose is to provide potential customers with a transparent and itemized breakdown of the cost associated with their desired stay.</p>
         </div>
         <div class="footer-col-3">
@@ -318,5 +219,6 @@
       <p class="copyright">Copyright 2025 - Paradise Hotels</p>
     </div>
   </footer>
+  <script src="order.js"></script>
 </body>
 </html>
