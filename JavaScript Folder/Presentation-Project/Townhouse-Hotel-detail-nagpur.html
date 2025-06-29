@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel-detail</title>
+  <link rel="stylesheet" href="Hotel-detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+  <header>
+    <div class="color"></div>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="">
+      </div>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="">List your property</a></li>
+        <li><a href="">Coupons and Deals</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="" onclick="return LogOut()" style="color: red;">Log out</a></li>
+        <li><a href="order.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </div>
+    <section id="search-section">
+        <div class="next-stay-container">
+          <h2>Find your next stay</h2>
+          <p>Search hotels,homes and many more on low prices</p>
+        </div>  <!--next-stay-container-->
+        <div class="stay-input-container">
+           <div class="where-going-container">
+              <img src="images/location.png" class="location-image">
+              <span>Where are you going?</span>
+              <br>
+              <select name="" id="location-select">
+                <option value="Indore">Indore</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Ujjain">Ujjain</option>
+              </select>
+           </div>
+           <div class="checkIn-checkOut-container">
+             <img src="images/calendar.png" id="calender-image">
+             Check-in :<input type="date" id="check-in">
+             Check-out :<input type="date" id="check-out">
+           </div>
+           <div class="adult-room-container">
+              Adults:<input type="number" name="" value="1" id="adult">
+              Childrens:<input type="number" name="" value="1" id="children">
+              Rooms:<input type="number" name="" value="1" id="rooms">
+           </div>
+           <div class="final-search-container" onclick="return ins()">
+             <span >Book</span>
+           </div>
+        </div> <!--stay-input-container-->
+      </section> <!--search section-->
+  </header>
+  <main>
+    <section id="header-container">
+      <div class="product-detail-container1">
+        <h2 id="detail-heading">Super Townhouse Nagpur Railway Station</h2> <br>
+        <img src="images/location.png" id="location-image">
+        <span>Opposite Mayo Hospital, Central Avenue Road, Bajaria, Nagpur, 440018, Nagpur, India</span> <br> <br>
+    </div> <!--product-detail-container1-->
+    </section>
+    <section id="hotel-detail-container">
+      <div class="product-detail-container2">
+        <div class="big-image-container">
+          <img src="images/detail1.jpg" alt="">
+          <div class="small-image-container">
+            <img src="images/detail2.jpg" alt="">
+            <img src="images/detail3.jpg" alt="">
+            <img src="images/detail4.jpg" alt="">
+            <img src="images/detail5.jpg" alt="">
+            <img src="images/detail6.jpg" alt="">
+          </div> <!--small-image-container-->
+        </div> <!--big-image-container  -->
+        <div class="review-section-container">
+          <div class="hotel-details-container">
+            <div class="review-container">
+              <div class="left-text-container">
+                <span class="bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Good</span>
+                <span class="light">80 reviews</span>
+              </div> <!--left-text-container-->
+              <div class="review-stars">
+                7.5
+              </div> <!--review-stars-->
+            </div> <!--review-container-->
+            <div class="customer-review-container">
+                <span class="bold" id="customer-reviews-heading">Customer Reviews</span> <br>
+                <span class="light">&nbsp;Guests who stayed here loved</span> <br>
+                <span>"Staff is very helpful. Good location. Overall good stay"</span> <br>
+                <div class="customer-detail-container">
+                  <div class="customer-name-logo">D</div>
+                  <span>Dipika Soni</span>
+                  <div class="customer-place">
+                    <img src="images/world.png" alt="" id="india-image">
+                    <span>India</span>
+                  </div>
+                </div> <br>
+                <span>"Everything is good. Location is near to the market. Staff is good"</span> <br>
+                <div class="customer-detail-container">
+                  <div class="customer-name-logo">A</div>
+                  <span>Abdulhamid</span>
+                  <div class="customer-place">
+                    <img src="images/world.png" alt="" id="india-image">
+                    <span>India</span>
+                  </div>
+                </div> <br>
+                <span>"The rooms were clean,spacious, and well-equipped, and the staff was incredibly friendly and helpful"</span> <br>
+                <div class="customer-detail-container">
+                  <div class="customer-name-logo">A</div>
+                  <span>Atul Rajput</span>
+                  <div class="customer-place">
+                    <img src="images/world.png" alt="" id="india-image">
+                    <span>India</span>
+                  </div>
+                  <br>
+                </div>
+            </div> <!--customer-review-container-->
+            <div class="great-location-container">
+              <span class="bold">Great Location!</span>
+              <div id="review-stars2">
+                7.9
+              </div> <!--review-stars-->
+            </div>
+          </div> <!--hotel-details-container-->
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119071.33121270819!2d79.0930851!3d21.15323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0c476cdf6bd%3A0xcefeb9eb4dbbc642!2sTownhouse%20Nagpur%20Railway%20Station%20formerly%20Orient%20Avenue!5e0!3m2!1sen!2sin!4v1750824819331!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div> <!--review-section-container-->
+      </div> <!--product-detail-container2-->
+    </section>
+    <section id="property-details-container">
+      <div class="property-detail-container">
+        <div class="left-container">
+          <h2>About this property</h2> <br>
+          <span class="bold">Comfortable Accommodations:</span>
+          <span>
+            Super Townhouse Nagpur Railway Station in Nagpur offers family rooms with air-conditioning, private bathrooms, work desks, and seating areas. Each room includes free toiletries, bath or shower, TV, tiled floors, and a wardrobe.
+          </span> <br> <br>
+          <span class="bold">Essential Facilities:</span>
+          <span>
+             Guests enjoy free WiFi, a lift, 24-hour front desk, housekeeping service, room service, and luggage storage. The hotel is pet-friendly, ensuring a pleasant stay for all travellers.
+          </span> <br> <br>
+          <span class="bold">Dining Options:</span>
+          <span>A continental breakfast is available each morning. Additional amenities include a TV, work desk, and free toiletries, catering to diverse guest needs.</span> <br> <br>
+          <span class="bold"></span>
+          <span class="bold">Prime Location:</span>
+          <span>
+            Located 9 km from Dr. Babasaheb Ambedkar International Airport, the hotel is a 5-minute walk from Nagpur Railway Station. Nearby attractions include Sitabuldi Fort and Zero Mile Stone Nagpur, each 2 km away.
+          </span>
+        </div>
+        <div class="right-container">
+          <h2>Property highlights</h2> <br>
+          <div class="div">
+            <img src="images/coffee-cup.png" alt="">
+            <h3>Breakfast available</h3>
+          </div>
+          <div class="div">
+            <img src="images/ocean.png" alt="">
+            <h3>Views</h3>
+          </div>
+          <div class="div">
+            <img src="images/wifi.png" alt="">
+            <h3>Free WiFi</h3>
+          </div>
+          <div class="div">
+            <img src="images/pet.png" alt="">
+            <h3>Pet friendly</h3>
+          </div>
+          <div class="div">
+            <img src="images/Room Service.png" alt="">
+            <h3>Room Service</h3>
+          </div>
+          <div class="save-this-property">
+            <img src="images/Heart.png" alt="">
+            <span>Save this Property</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and ios mobile phone.</p>
+          <div class="app-logo">
+            <img src="images/play-store.png">
+            <img src="images/app-store.png">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <img src="images/logo.jpg" alt="">
+          <p>Our Purpose is to provide potential customers with a transparent and itemized breakdown of the cost associated with their desired stay.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright 2025 - Paradise Hotels</p>
+    </div>
+  </footer>
+  <script src="order.js"></script>
+</body>
+</html>

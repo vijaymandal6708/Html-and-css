@@ -29,7 +29,7 @@ header{
 
 .navbar ul{
   display: flex;
-  width: 40vw;
+  width: 56vw;
   justify-content: space-between;
   align-items: center;
 }

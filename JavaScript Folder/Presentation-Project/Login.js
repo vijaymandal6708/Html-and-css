@@ -5,6 +5,7 @@ let Login=()=>{
 
    let loginemail = localStorage.getItem("Email");
    let loginpass = localStorage.getItem("Password");
+   
 
    if(inpemail==loginemail && inppass==loginpass){
     location.href="Home.html";
@@ -25,3 +26,7 @@ let LogOut=()=>{
 
   return false;
 };
+
+
+let myname = localStorage.getItem("Name");
+document.querySelector("#nameprint").innerHTML = `Welcome ${myname}`;

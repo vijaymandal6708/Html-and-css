@@ -46,7 +46,7 @@ data.map((e)=>{
     <td>${e.Adult}</td>
     <td>${e.Children}</td>
     <td>${e.Rooms}</td>
-    <td>${e.Children}</td>
+    <td>₹${e.Adult*2000}</td>
     <td>${curr.getFullYear()}-${curr.getMonth()+1}-${curr.getDate()}</td>
     <td onclick="formopen('${e.id}')">Edit</td>
     <td onclick="Del('${e.id}')">Delete</td>
@@ -181,3 +181,19 @@ let UpdateForm=(id)=>{
   })
 
 }
+
+
+// const urlMap = {
+//   Indore:"Rajdhani-Hotel-detail-indore.html",
+//   Nagpur:"Townhouse-Hotel-detail-nagpur.html"
+// };
+
+// function redirectPage() {
+//   const select = document.getElementById("#location-select1");
+//   const selectedKey = select.value;
+//   const url = urlMap[selectedKey];
+
+//   if(url){
+//     location.href=url;
+//   }
+// }

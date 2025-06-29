@@ -1,29 +1,11 @@
 {
   "hotel": [
     {
-      "id": "9a37",
-      "City": "Nagpur",
-      "CheckIn": "2025-06-28",
-      "CheckOut": "2025-06-28",
-      "Adult": "1",
-      "Children": "2",
-      "Rooms": "3"
-    },
-    {
-      "id": "a513",
-      "City": "Nagpur",
-      "CheckIn": "2025-06-28",
-      "CheckOut": "2025-06-28",
-      "Adult": "1",
-      "Children": "2",
-      "Rooms": "3"
-    },
-    {
-      "id": "1103",
-      "City": "Nagpur",
-      "CheckIn": "",
-      "CheckOut": "",
-      "Adult": "1",
+      "id": "18db",
+      "City": "Indore",
+      "CheckIn": "2025-06-05",
+      "CheckOut": "2025-06-24",
+      "Adult": "5",
       "Children": "1",
       "Rooms": "1"
     }
