@@ -7,7 +7,7 @@ let second = document.querySelector("#second");
 let time = [0,0,0];
 
 start.addEventListener("click", ()=>{
-  timerId = setInterval(()=>{
+  let timerId = setInterval(()=>{
     time[2]++;
     if(time[2]==60){
       time[1]++;
@@ -18,5 +18,9 @@ start.addEventListener("click", ()=>{
       time[1]=0;
     }
     console.log(time);
+
+    hour.innerHTML = time[0];
+    minute.innerHTML = time[1];
+    second.innerHTML = time[2];
   }, 1000)
 })

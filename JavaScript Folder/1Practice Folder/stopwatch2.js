@@ -14,12 +14,10 @@ start.addEventListener("click", ()=>{
       time[1]++;
       time[2]=0;
      }
-
      if(time=[1]==60){
       time[0]++;
       time[1]=0;
      }
-
      console.log(time);
    }, 1000)
 

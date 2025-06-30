@@ -21,7 +21,7 @@ let Login=()=>{
 
 let LogOut=()=>{
   console.log("hello");
-  location.href="Sign-Up.html";
+  location.href="index.html";
   localStorage.clear();
 
   return false;
