@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <p id="balance">your balance is:</p>
+    Add Budget<input type="number" id="budget">
+    <button id="add-budget" onclick="balance.innerHTML+=document.querySelector('#budget').value">Add</button>
+    Add Expense<input type="number" id="expense">
+    <button id="add-expense" onclick="diff()">Add</button>
+  
+  </div>
+  <script src="expense.js"></script>
+</body>
+</html>
