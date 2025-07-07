@@ -1,7 +1,11 @@
 const About = () => {
+  let mystyle = {
+    backgroundColor: "yellow",
+    paddingLeft: "100px"
+  }
   return(
     <>
-       <h1>About</h1>
+       <h1 style={mystyle}>About</h1>
 
        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet libero earum tenetur unde fuga assumenda doloribus eaque aut cumque voluptates deserunt quae recusandae laudantium, est ut sunt magni. Est, dolore!
        Nulla hic autem quae optio mollitia suscipit quibusdam commodi corrupti labore, ipsum, itaque voluptate, reprehenderit numquam voluptates? Maxime facere a magni laboriosam earum, id, optio in alias nemo sint nobis?

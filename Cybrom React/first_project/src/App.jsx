@@ -1,6 +1,7 @@
 import About from "./components/About"
 import Contact from "./components/Contact"
 import Services from "./components/Services"
+import Image from "./components/Image"
 
 function App(){
   return(
@@ -10,6 +11,7 @@ function App(){
        <About></About>
        <Contact></Contact>
        <Services></Services>
+       <Image></Image>
     </>
   )
 }
