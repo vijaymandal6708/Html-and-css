@@ -8,6 +8,15 @@
       "Children": "1",
       "Rooms": "1",
       "id": "18db"
+    },
+    {
+      "City": "Indore",
+      "CheckIn": "",
+      "CheckOut": "",
+      "Adult": "1",
+      "Children": "3",
+      "Rooms": "1",
+      "id": "9f57"
     }
   ]
 }
