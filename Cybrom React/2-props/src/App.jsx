@@ -7,7 +7,7 @@ import Child4 from './components/Child4'
 function App() {
 
    let info = {
-      name:"Ajay",
+      name:"Vikash",
       contact:1234,
       city:"bhopal"
     }
@@ -17,9 +17,11 @@ function App() {
     <>
       <h1>Welcome to react js class</h1>
       <Child1 name="Vijay" age={23} contact={6265826714} city="Bhopal"></Child1>
+      <hr/>
       <Child2 name="Vijay" age={23} contact={6265} city="Bhopal"></Child2>
+      <hr/>
       <Child3 userinfo={info}></Child3>
-      <hr />
+      <hr/>
       <Child4 user={{...info}}></Child4>
     </>
   )

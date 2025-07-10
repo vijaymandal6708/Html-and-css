@@ -3,7 +3,7 @@ const Child2 = ({name,age}) => {
 
   return (
     <>
-      <h1>This is child 1</h1>
+      <h1>This is child 2</h1>
       <h2>name:{name} and age:{age}</h2>
     </>
   )
