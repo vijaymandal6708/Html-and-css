@@ -25,8 +25,8 @@ function App(){
       <button onClick={()=>setContact(897)}>Change Contact</button>
 
       <center><h1>{number}</h1></center>
-      <center><button onClick={()=>setNumber()}>+</button></center>
-      <center><button>-</button></center>
+      <center><button onClick={()=>setNumber(number+1)}>+</button></center>
+      <center><button onClick={()=>setNumber(number-1)}>-</button></center>
     </>
   )
 }
