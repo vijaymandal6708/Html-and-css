@@ -20,6 +20,7 @@ function Form() {
          Confirm Password <input type="text" id="cpass"/> <br/> <br/>
 
          <input type="submit" value="Sign-Up" onClick="return Validate()"/>
+         <p>Hello</p>
 
       </form>
 
