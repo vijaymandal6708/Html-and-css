@@ -4,6 +4,7 @@ function Form() {
     <>
 
       <form align="center">
+         <h1>This is Form page</h1>
          <p id="errname"></p>
          Enter Name <input type="text" id="name"/> <br/> <br/>
 
