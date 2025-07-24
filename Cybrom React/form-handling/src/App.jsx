@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Form from './components/Form'
 import Multiform from './components/Multiform'
+import Localstorage from './components/LocalStorage'
+import { Route,Routes } from 'react-router-dom'
+import Localfrm from './components/Localfrm'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-       {/* <Form></Form> */}
-       <Multiform></Multiform>
+       <Routes>
+        <Route index element={<Localstorage/>}></Route>
+        <Route path='/showdata' element={<Localfrm></Localfrm>}></Route>
+       </Routes>
     </>
   )
 }

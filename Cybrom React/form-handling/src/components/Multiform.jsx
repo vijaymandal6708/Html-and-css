@@ -13,7 +13,6 @@ function Multiform(){
    function finalsubmit(event){
     event.preventDefault()
     console.log(frmdata);
-    localStorage.setItem('userdata',JSON.stringify(frmdata))
    }
 
   return(
