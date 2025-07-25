@@ -5,7 +5,7 @@ function Localstorage(){
 
   let [frmdata, setFrmdata] = useState({name:"", age:""})
 
-  let [FetchData, setFetchData] = useState("")
+  // let [FetchData, setFetchData] = useState("")
 
   let navigator = useNavigate()
 
@@ -18,12 +18,8 @@ function Localstorage(){
     event.preventDefault()
     console.log(frmdata);
     localStorage.setItem('userdata',JSON.stringify(frmdata))
-    setFetchData(()=>JSON.parse(localStorage.getItem("userdata")))
+    // setFetchData(()=>JSON.parse(localStorage.getItem("userdata")))
     navigator('./showdata')
-   }
-
-   function clearstorage(){
-    localStorage.clear()
    }
 
   return(
@@ -38,9 +34,8 @@ function Localstorage(){
 
         <input type="submit" style={{height:"45px", width:"80px", color:"white", backgroundColor:"green", borderRadius:"8px", border:"none", outline:"none", fontSize:"15px"}}/>
       </form>
-      <p>{FetchData.name}</p>
-      <p>{FetchData.age}</p>
-      <button style={{backgroundColor:"red", color:"white"}} onClick={clearstorage}>Clear</button>
+      {/* <p>{FetchData.name}</p>
+      <p>{FetchData.age}</p> */}
     </>
   )
 }
