@@ -1,13 +1,14 @@
 import { useContext } from "react"
+import { user } from "../App"
 
 function Dashboard (){
 
-    let name = useContext(user)
+    let detail = useContext(user)
 
     return(
         <>
-          <h1>Dashboard</h1>
-          <h1>{name}</h1>
+          <hr />
+          <h1>{detail.name}</h1>
         </>
     )
 }

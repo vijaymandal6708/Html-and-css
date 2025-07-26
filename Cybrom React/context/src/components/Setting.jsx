@@ -1,9 +1,17 @@
-function Dashboard (){
+import { useContext } from "react"
+import { user } from "../App"
+
+function Setting (){
+
+    let detail = useContext(user)
+
     return(
         <>
-          <h1>Setting</h1>
+          <hr />
+          <h1>{detail.email}</h1>
+          <h1>{detail.password}</h1>
         </>
     )
 }
 
-export default Dashboard
+export default Setting

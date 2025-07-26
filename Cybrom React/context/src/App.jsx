@@ -2,6 +2,7 @@ import { createContext } from 'react'
 import Child1 from './components/Child1'
 import './App.css'
 import Dashboard from './components/Dashboard'
+import Setting from './components/Setting'
 
 let store = createContext()
 
@@ -22,6 +23,7 @@ function App() {
 
       <user.Provider value={detail}>
         <Dashboard></Dashboard>
+        <Setting></Setting>
       </user.Provider>
       
     </>
