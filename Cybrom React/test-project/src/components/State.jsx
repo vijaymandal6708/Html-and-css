@@ -1,12 +1,14 @@
 import { useState } from "react"
 
+
 function State(){
 
+    let [flag, setFlag] = useState(false)  
 
     return(
         <>
-          <h1>{value}</h1>
-          <button onClick={value=="Hello"? true1 : false1 }>{value1}</button>
+          { flag==false && <h1>Hello</h1>}
+          <button onClick={()=>setFlag(!flag)}>{flag? "Show" : "Hide"}</button>
 
         </>
     )
