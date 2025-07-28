@@ -21,7 +21,7 @@ function Form(){
             <label htmlFor="">Age : </label>
             <input type="text" /> <br /> <br />
 
-            <label htmlFor="">Password : </label>
+            <label htmlFor="">Enter Password : </label>
             <input type="text" />
           </form>
 
