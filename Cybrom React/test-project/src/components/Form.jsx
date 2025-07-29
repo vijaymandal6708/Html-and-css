@@ -1,11 +1,25 @@
+import { useState } from "react";
+import Localstorage from "../../../form-handling/src/components/LocalStorage";
+
 function Form(){
 
 
-    function handleinput(e) {
-          
-         console.log(e.target.value);
+    let [value, setValue] = useState({})
 
-       }
+
+    function handleinput(e) {
+        //  console.log(e);
+        //  const {name, value} = e.target 
+        //  setFrmdata({...frmdata,[name]:value})
+        setValue({...value,[e.target.name]:e.target.value})
+        console.log(value);
+        }
+
+        function finalsubmit(e) {
+          e.preventDefault()
+          console.log(value);
+          localStorage.setItem('value1',JSON.stringify(value))
+        }
 
 
     return(
@@ -16,13 +30,15 @@ function Form(){
           <h1>Form</h1>
           <form action="">
             <label htmlFor="">Name : </label>
-            <input type="text" onChange={handleinput}/> <br /> <br />
+            <input type="text" name="name" onChange={handleinput}/> <br /> <br />
 
-            <label htmlFor="">Age : </label>
-            <input type="text" /> <br /> <br />
+            <label htmlFor="">Email : </label>
+            <input type="text" name="email" onChange={handleinput}/> <br /> <br />
 
             <label htmlFor="">Enter Password : </label>
-            <input type="text" />
+            <input type="text" name="password" onChange={handleinput}/> <br /> <br />
+
+            <input type="submit" value="Submit" onClick={finalsubmit}/>
           </form>
 
         </>

@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <h1>This is App</h1>
+      <Form></Form>
       <Routes>
         <Route index element={<State/>}></Route>
         <Route path="form" element={<Form/>}></Route>
