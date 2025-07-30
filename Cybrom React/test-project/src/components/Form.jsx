@@ -28,6 +28,7 @@ function Form(){
         <>
         
           <h1>Form</h1>
+          <nav>Navbar</nav>
           <form action="">
             <label htmlFor="">Name : </label>
             <input type="text" name="name" onChange={handleinput}/> <br /> <br />
