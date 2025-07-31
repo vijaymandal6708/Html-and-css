@@ -7,9 +7,11 @@ function State(){
 
     return(
         <>
-          { flag==false && <h1>Hello</h1>}
+          <div className="div">
+            { flag==false && <h1>Hello</h1>}
           <button onClick={()=>setFlag(!flag)}>{flag? "Show" : "Hide"}</button>
 
+          </div>
         </>
     )
 

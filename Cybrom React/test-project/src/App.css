@@ -1,42 +1,74 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.navbar{
+  display: flex;
+  gap: 50vw;
+  padding: 2px 30px;
+  background-color: rgb(19, 139, 251);
+  color: white;
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a{
+  color: white;
+  align-self: center;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.left{
+  display: flex;
+  gap: 35px;
 }
 
-.card {
-  padding: 2em;
+.right{
+  display: flex;
+  gap: 35px;
 }
 
-.read-the-docs {
-  color: #888;
+footer{
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(57, 116, 132);
+  color: white;
+  flex-direction: column;
+  padding: 0px 330px;
+  font-size: 20px;
+}
+
+p{
+  font-size: 18px;
+}
+
+.div{
+  min-height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 50px;
+}
+
+.color-container{
+  margin-left: 500px;
+  margin-top: 100px;
+  height: 200px;
+  width: 500px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 40px;
+  box-shadow: 3px 3px 5px 5px;
+
 }

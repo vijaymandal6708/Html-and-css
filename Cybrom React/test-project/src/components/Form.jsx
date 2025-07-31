@@ -26,17 +26,18 @@ function Form(){
 
         
         <>
-        
-          <h1>Form</h1>
-          <nav>Navbar</nav>
-          <form action="">
+           
+          <br />
+          <br />
+          <h1 align="center" style={{fontSize:"42px"}}>Form</h1>
+          <form action="" align="center">
             <label htmlFor="">Name : </label>
             <input type="text" name="name" onChange={handleinput}/> <br /> <br />
 
             <label htmlFor="">Email : </label>
             <input type="text" name="email" onChange={handleinput}/> <br /> <br />
 
-            <label htmlFor="">Enter Password : </label>
+            <label htmlFor="">Password : </label>
             <input type="text" name="password" onChange={handleinput}/> <br /> <br />
 
             <input type="submit" value="Submit" onClick={finalsubmit}/>
