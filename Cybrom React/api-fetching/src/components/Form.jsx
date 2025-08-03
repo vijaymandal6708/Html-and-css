@@ -27,16 +27,16 @@ function Form(){
         <form action="" onSubmit={finalsubmit} align="center" style={{marginTop:"200px"}}>
 
           <label htmlFor="">Name:</label>
-          <input type="text" name="name" onChange={handleinput}/> <br /> <br />
+          <input type="text" name="name" onChange={handleinput}/> <br /> <br /> <br />
 
           <label htmlFor="">Contact:</label>
-          <input type="text" name="contact" onChange={handleinput}/> <br /> <br />
+          <input type="text" name="contact" onChange={handleinput}/> <br /> <br /> <br />
 
           <label htmlFor="">City:</label>
-          <input type="text" name="city" onChange={handleinput}/> <br /> <br />
+          <input type="text" name="city" onChange={handleinput}/> <br /> <br /> <br />
 
           <label htmlFor="">Email:</label>
-          <input type="text" name="email" onChange={handleinput}/> <br /> <br />
+          <input type="text" name="email" onChange={handleinput}/> <br /> <br /> <br />
 
           <input type="submit"/>
 
