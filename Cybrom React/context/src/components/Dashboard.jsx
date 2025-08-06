@@ -8,7 +8,7 @@ function Dashboard (){
     return(
         <>
           <hr />
-          <h1>{detail.name}</h1>
+          <h1>{user.name}</h1>
         </>
     )
 }

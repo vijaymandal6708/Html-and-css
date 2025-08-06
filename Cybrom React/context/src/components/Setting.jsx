@@ -8,8 +8,8 @@ function Setting (){
     return(
         <>
           <hr />
-          <h1>{detail.email}</h1>
-          <h1>{detail.password}</h1>
+          <h2>email:{user.email}</h2>
+          <h2>password:{user.password}</h2>
         </>
     )
 }

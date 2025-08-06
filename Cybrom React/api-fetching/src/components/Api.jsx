@@ -30,6 +30,12 @@ const Api = () => {
        setEditdata({...editdata,[name]:value})
     }
 
+    function finaledit(e){
+        e.preventDefault()
+        axios.put(`http://localhost:3000/userdata/${editdata.id}`,editdata)
+        .then(()=>alert("updated"))
+    }
+
     return(
     <>
       <h1>Api page</h1>
@@ -74,6 +80,8 @@ const Api = () => {
 
         <label htmlFor="">Id</label>
         <input type="text" name="id" disabled  value={editdata.id} onChange={handleedit}/> <br /> <br />
+
+        <input type="submit" onClick={finaledit} />
 
         </form>
         }
