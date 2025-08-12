@@ -199,7 +199,7 @@ footer hr{
 .sign-up-container{
   width: 100%;
   height: 600px;
-  background-image: url(Images/final.jpg);
+  background: radial-gradient(circle, white, rgb(68, 202, 250));
   background-size: cover;
   margin-bottom: -30px;
   display: flex;
@@ -215,8 +215,10 @@ footer hr{
   border: 5px solid #f8f9fa;
   /* border-bottom: 5px solid rgba(0, 0, 0, 0.600); */
   /* border-right: 5px solid rgba(0, 0, 0, 0.600);*/
-  box-shadow: 0px 0px 10px 10px white;
+  box-shadow: 5px 5px 10px 10px rgba(255, 255, 255, 0.674);
   border-radius: 15px;
+  background: radial-gradient(circle, white, rgb(68, 202, 250));
+
 }
 .sign-up{
   height: 300px;

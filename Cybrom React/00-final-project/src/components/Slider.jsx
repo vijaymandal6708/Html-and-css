@@ -30,9 +30,11 @@ const Slider = () => {
         pagination={{ clickable: true }}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
-        <SwiperSlide style={slideStyle}><img src="offer2.jpg" className="w-[100vw] h-[635px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer3.webp" className="w-[100vw] h-[635px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer4.jpg" className="w-[100vw] h-[635px] bg-cover"/></SwiperSlide>
+        <SwiperSlide style={slideStyle}><img src="offer2.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
+        <SwiperSlide style={slideStyle}><img src="offer3.webp" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
+        <SwiperSlide style={slideStyle}><img src="offer5.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
+        <SwiperSlide style={slideStyle}><img src="offer1.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
+        <SwiperSlide style={slideStyle}><img src="offer6.png" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
@@ -81,8 +83,9 @@ const slideStyle = {
   justifyContent: "center",
   alignItems: "center",
   fontSize: "2rem",
-  background: "rgb(98,193,229)",
+  background: "white",
   color: "white",
+  minHeight: "635px"
 };
 
 export default Slider;
