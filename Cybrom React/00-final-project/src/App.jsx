@@ -9,6 +9,7 @@ import Wishlist from './components/Wishlist'
 import Cart from './components/Cart'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import AboutUs from './components/Aboutus'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
            <Route path="cart" element={<Cart/>}></Route>
            <Route path="signup" element={<Signup/>}></Route>
            <Route path="login" element={<Login/>}></Route>
+           <Route path="about" element={<AboutUs/>}></Route>
          </Route>
        </Routes>
 

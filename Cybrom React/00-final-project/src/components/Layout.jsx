@@ -11,7 +11,7 @@ const Layout = () => {
          <Link to="/" className="home ml-auto">Home</Link>
          <Link to="categories" className="categories">Categories</Link>
          <Link to="latest-products" className="latest-products">Latest Products</Link>
-         <Link className="about">About Us</Link>
+         <Link to="about" className="latest-products">About Us</Link>
          <Link to="wishlist" className="wishlist-container">Wishlist</Link>
          <Link to="cart" className="cart-container">Cart</Link>
          <Link to="signup" className="signup-container">Signup</Link>

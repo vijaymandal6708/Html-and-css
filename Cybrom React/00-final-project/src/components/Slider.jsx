@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -6,72 +6,45 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Slider = () => {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-
-  const onAutoplayTimeLeft = (swiper, time, progress) => {
-    if (progressCircle.current) {
-      progressCircle.current.style.setProperty("--progress", progress);
-    }
-    if (progressContent.current) {
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-  };
+  const slides = [
+    "offer2.jpg",
+    "offer3.webp",
+    "offer5.jpg",
+    "offer1.jpg",
+    "offer6.png",
+  ];
 
   return (
-    <div style={{ width: "100%", height: "80vh", position: "relative" }}>
+    <div className="w-full h-[91vh] relative">
       <Swiper
         modules={[Autoplay, Pagination]}
-        loop={true}
+        loop
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="h-full"
       >
-        <SwiperSlide style={slideStyle}><img src="offer2.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer3.webp" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer5.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer1.jpg" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src="offer6.png" className="w-[100vw] h-[630px] bg-cover"/></SwiperSlide>
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
+        {slides.map((src, index) => (
+          <SwiperSlide key={index} style={slideStyle}>
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-fill"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <style>{`
-        .autoplay-progress {
-          position: absolute;
-          right: 10px;
-          bottom: 50px;
-          width: 48px;
-          height: 48px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        /* Pagination dots color */
+        .swiper-pagination-bullet {
+          background-color: rgb(68,202,250);
+          opacity: 1;
         }
-        .autoplay-progress svg {
-          --progress: 0;
-          transform: rotate(-90deg);
-          width: 100%;
-          height: 100%;
-        }
-        .autoplay-progress circle {
-          fill: none;
-          stroke: #2196f3;
-          stroke-width: 4;
-          stroke-dasharray: 126;
-          stroke-dashoffset: calc(126 * (1-var(--progress)));
-          transition: stroke-dashoffset 0.25s linear;
-        }
-        .autoplay-progress span {
-          position: absolute;
-          font-size: 12px;
-          color: #2196f3;
+        .swiper-pagination-bullet-active {
+          background-color: #29b6f6;
         }
       `}</style>
     </div>
@@ -82,10 +55,8 @@ const slideStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  fontSize: "2rem",
   background: "white",
-  color: "white",
-  minHeight: "635px"
+  height: "100%",
 };
 
 export default Slider;

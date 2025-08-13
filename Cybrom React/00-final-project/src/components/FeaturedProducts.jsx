@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa6";
 const FeaturedProducts = () => {
   return (
     <>
-      <div className="row mt-[100px] h-[60vh] flex gap-[30px] justify-evenly align-center px-[30px]">
+      <div className="row mt-[20px] h-[60vh] flex gap-[30px] justify-evenly align-center px-[30px]">
         <div className="item-div h-[200px]">
             <img src="product-1.jpg" alt="" className="bg-contain border-[2px] border-gray-300 rounded-[10px]"/>
             <h4 className="font-stretch-100% font-semibold">Amazon Alexa Voice Remote</h4>
