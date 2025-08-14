@@ -3,12 +3,10 @@ import React from "react";
 const AboutUs = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-      {/* Heading */}
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">
+      <h1 className="text-4xl font-bold text-center text-black mb-6 italic underline">
         About Us
       </h1>
 
-      {/* Intro Paragraph */}
       <p className="text-lg text-gray-700 text-center mb-10 leading-relaxed">
         Welcome to <span className="font-semibold text-blue-500">Gadget Galaxy</span>, 
         your ultimate destination for the latest and greatest in electronic gadgets. 
@@ -16,9 +14,7 @@ const AboutUs = () => {
         bringing cutting-edge technology to your fingertips.
       </p>
 
-      {/* Content Sections */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* Left Side - Image */}
         <div>
           <img
             src="about.png"
@@ -27,9 +23,8 @@ const AboutUs = () => {
           />
         </div>
 
-        {/* Right Side - Description */}
         <div>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 italic">
             Our Story
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
@@ -47,9 +42,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Closing Statement */}
       <div className="mt-12 text-center">
-        <h3 className="text-xl font-semibold text-blue-500 mb-2">
+        <h3 className="text-xl font-semibold text-black mb-2">
           Join Our Journey
         </h3>
         <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
