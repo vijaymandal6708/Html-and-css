@@ -43,7 +43,7 @@ const AboutUs = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <h3 className="text-xl font-semibold text-black mb-2">
+        <h3 className="text-xl font-semibold text-blue mb-2">
           Join Our Journey
         </h3>
         <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
