@@ -1,9 +1,12 @@
 import React from 'react'
 import { additem } from './CartSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
   let dispatch = useDispatch()
+  let navigator = useNavigate()
+
   let cart = useSelector((store)=>store.cart.cartitems)
 
   let Productlist = [
@@ -27,6 +30,7 @@ const Products = () => {
     <>
       
       <h1>Cart-{cart.length}</h1>
+      <button onClick={()=>navigator('./showcart')}>Go to Cart Page</button>
       <div style={{display:"flex" ,justifyContent:"space-around"}}>
         {
             Productlist.map((e)=>(

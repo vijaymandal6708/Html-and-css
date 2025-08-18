@@ -15,14 +15,14 @@ const Categories = () => {
     { id: 7, title: "Realme Buds Air5", price: 3499, image: "category-5.jpg", category: "Headphones" },
     { id: 8, title: "Hitage Neckband", price: 1099, image: "category-6.jpg", category: "Headphones" },
     { id: 9, title: "Boat Airdopes 181", price: 1399, image: "category-7.jpg", category: "Headphones" },
-    { id: 10, title: "Sony Headphones", price: 19999, image: "category-8.jpg", category: "Headphones" },
+    { id: 10, title: "Sony Headphone XB-100", price: 19999, image: "category-8.jpg", category: "Headphones" },
     { id: 11, title: "Apple Airpods Max", price: 59999, image: "headphone5.jpeg", category: "Headphones" },
     { id: 12, title: "Truke Buds Clarity", price: 3399, image: "headphone6.jpg", category: "Headphones" },
 
     { id: 13, title: "HP 15s ,13th Gen Intel Core i3 1315u", price: 25000, image: "laptop1.jpg", category: "Laptops" },
     { id: 14, title: "Asus Vivobook 15 OLED Ryzen 7530u", price: 38000, image: "laptop2.jpg", category: "Laptops" },
-    { id: 15, title: "ULTIMUS Apex Laptop Intel Celeron Dual Core", price: 75000, image: "laptop3.jpg", category: "Laptops" },
-    { id: 16, title: "MSI Modern 15, Intel Core i7", price: 40000, image: "laptop4.jpg", category: "Laptops" },
+    { id: 15, title: "ULTIMUS Apex Laptop Intel Celeron Dual Core", price: 17999, image: "laptop3.jpg", category: "Laptops" },
+    { id: 16, title: "MSI Modern 15, Intel Core i7", price: 39999, image: "laptop4.jpg", category: "Laptops" },
     { id: 17, title: "2022 Macbook Air Laptop, M2 Chip", price: 52000, image: "laptop5.jpg", category: "Laptops" },
     { id: 18, title: "2024 MAcBook Pro with M4 Chip", price: 95000, image: "laptop6.jpg", category: "Laptops" },
 

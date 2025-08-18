@@ -1,5 +1,7 @@
 import { data } from "../App"
 import { useContext } from "react"
+
+
 function Child1() {
 
     let actualdata = useContext(data)
