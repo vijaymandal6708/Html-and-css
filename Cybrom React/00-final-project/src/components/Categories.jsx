@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaStar } from "react-icons/fa6";
+import { CartContext } from "../App";  // Import CartContext
 
 const Categories = () => {
+  const { addToCart } = useContext(CartContext); // Access addToCart from context
+
   const categories = ["All", "Smartphone", "Headphones", "Laptops", "Cameras"];
 
   const products = [
@@ -19,12 +22,12 @@ const Categories = () => {
     { id: 11, title: "Apple Airpods Max", price: 59999, image: "headphone5.jpeg", category: "Headphones" },
     { id: 12, title: "Truke Buds Clarity", price: 3399, image: "headphone6.jpg", category: "Headphones" },
 
-    { id: 13, title: "HP 15s ,13th Gen Intel Core i3 1315u", price: 25000, image: "laptop1.jpg", category: "Laptops" },
+    { id: 13, title: "HP 15s ,13th Gen Intel Core i3 1315u", price: 45999, image: "laptop1.jpg", category: "Laptops" },
     { id: 14, title: "Asus Vivobook 15 OLED Ryzen 7530u", price: 38000, image: "laptop2.jpg", category: "Laptops" },
     { id: 15, title: "ULTIMUS Apex Laptop Intel Celeron Dual Core", price: 17999, image: "laptop3.jpg", category: "Laptops" },
     { id: 16, title: "MSI Modern 15, Intel Core i7", price: 39999, image: "laptop4.jpg", category: "Laptops" },
-    { id: 17, title: "2022 Macbook Air Laptop, M2 Chip", price: 52000, image: "laptop5.jpg", category: "Laptops" },
-    { id: 18, title: "2024 MAcBook Pro with M4 Chip", price: 95000, image: "laptop6.jpg", category: "Laptops" },
+    { id: 17, title: "2022 Macbook Air Laptop, M2 Chip", price: 52999, image: "laptop5.jpg", category: "Laptops" },
+    { id: 18, title: "2024 MAcBook Pro with M4 Chip", price: 95999, image: "laptop6.jpg", category: "Laptops" },
 
     { id: 19, title: "Sony Alpha a7 48MP", price: 179999, image: "category-9.jpg", category: "Cameras" },
     { id: 20, title: "Fujifilm X-H2 40MP", price: 197999, image: "category-10.jpg", category: "Cameras" },
@@ -32,7 +35,7 @@ const Categories = () => {
     { id: 22, title: "Sony Alpha ILCE 24.2MP", price: 51990, image: "category-12.jpg", category: "Cameras" },
     { id: 23, title: "Sony Digital Camera 20MP", price:34999, image: "camera5.webp", category: "Cameras" },
     { id: 24, title: "Sony New Alpha ILCE 24.2MP", price: 73990, image: "camera6.jpg", category: "Cameras" },
-    ];
+  ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -62,30 +65,33 @@ const Categories = () => {
         ))}
       </div>
 
-      {/* Products Grid */}
-      <div className="mt-10 px-6 grid grid-cols-4 gap-6">
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[25px] mt-[35px]">
         {shownProducts.map((product) => (
-          <div
-            key={product.id}
-            className="border-2 border-gray-200 rounded-lg p-3 hover:shadow-lg transition"
+          <div key={product.id}
+            className="h-[400px] border-2 border-gray-200 rounded-[20px] overflow-hidden px-[20px] py-[10px] flex flex-col shadow-md hover:shadow-lg transition-shadow"
           >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-full h-[280px] object-contain rounded-lg"
-            />
-            <h4 className="font-semibold mt-2 text-sm">{product.title}</h4>
-            <p className="font-semibold">₹{product.price.toFixed(2)}</p>
-            <div className="flex text-[rgb(68,202,250)]">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
+            <div className="h-[255px] mb-[10px] flex items-center justify-center">
+              <img src={product.image} alt={product.title} className="h-[255px] object-contain"/>
+            </div>
+            <div>
+              <h4 className="font-semibold">{product.title}</h4>
+              <p className="text-[13.5px] font-medium">₹{product.price.toLocaleString("en-IN")}</p>
+              <div className="flex mt-[3px] text-yellow-400">
+                {[...Array(5)].map((_, i) => <FaStar key={i} />)}
+              </div>
+              <button
+                onClick={() => addToCart(product)}
+                className="border w-[105px] h-[32px] mt-[7px] bg-sky-400 rounded-[8px] text-white text-[13.5px] font-semibold italic shadow-md hover:bg-sky-500 transition-colors"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default Categories;
