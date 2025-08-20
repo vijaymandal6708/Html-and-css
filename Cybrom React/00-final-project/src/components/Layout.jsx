@@ -21,6 +21,7 @@ const Layout = () => {
         <Link to="orders" className="signup-container">Orders</Link>
         <Link to="signup" className="signup-container">Signup</Link>
       </nav>
+      <hr className="text-gray-200"/>
 
       <Outlet />
 

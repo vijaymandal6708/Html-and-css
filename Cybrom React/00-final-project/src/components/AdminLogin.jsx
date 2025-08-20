@@ -3,8 +3,9 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const AdminLogin = () => {
   const [loginFrm, setLoginFrm] = useState({});
+  const navigate = useNavigate();
 
   function handleInput(e) {
     setLoginFrm({ ...loginFrm, [e.target.name]: e.target.value });
@@ -12,18 +13,18 @@ const Login = () => {
 
   function handleLoginSubmit(e) {
     e.preventDefault();
-    let savedUser = JSON.parse(localStorage.getItem('signfrm'));
+    let savedAdmin = JSON.parse(localStorage.getItem('adminfrm'));
 
-    if (!savedUser) {
-      alert("No account found. Please sign up first.");
+    if (!savedAdmin) {
+      alert("No admin account found. Please register an admin.");
       return;
     }
 
-    if (loginFrm.email === savedUser.email && loginFrm.password === savedUser.password) {
-      alert("Login successful!");
-      // navigate("/dashboard") if using React Router
+    if (loginFrm.email === savedAdmin.email && loginFrm.password === savedAdmin.password) {
+      alert("Admin Login successful!");
+      navigate("/adminpanel"); // Redirect to Admin Panel
     } else {
-      alert("Wrong Credentials");
+      alert("Wrong Admin Credentials");
     }
   }
 
@@ -36,13 +37,13 @@ const Login = () => {
         >
           <div className="left-container rounded-[20px] w-[580px] h-[540px] bg-white flex align-center justify-center">
             <form className="flex flex-col align-center justify-center gap-[30px]" onSubmit={handleLoginSubmit}>
-              <h2 className="font-bold text-black italic text-[28px]">Login</h2>
+              <h2 className="font-bold text-black italic text-[28px]">Admin Login</h2>
               <div className="email bg-gray-200 border-1
               border-gray-300 h-[45px] w-[380px] rounded-[10px]
               flex align-center justify-center">
                 <input
                   type="email"
-                  placeholder="Enter email here"
+                  placeholder="Enter admin email"
                   name="email"
                   onChange={handleInput} className="h-[45px] outline-0 w-[320px] font-semibold"
                 />
@@ -53,23 +54,18 @@ const Login = () => {
               flex align-center justify-center">
                 <input
                   type="password"
-                  placeholder="Enter password here"
+                  placeholder="Enter admin password"
                   name="password"
                   onChange={handleInput} className="h-[45px] outline-0 w-[320px] font-semibold"
                 />
                 <RiLockPasswordFill className="mt-[12px]"/>
               </div>
               <input type="submit" value="Login" className="h-[45px] w-[380px] bg-[rgb(51,180,227)] rounded-[10px] text-white font-bold italic text-[16px]"/>
-              <div className="admin-container flex items-center justify-center">
-                <p className="w-[150px]">Are you a Admin?</p>
-                <Link to="/adminlogin" className="w-[110px] border-1 rounded-[10px] p-[5px] bg-[rgb(68,202,250)] text-white font-semibold italic">Login here</Link>
-              </div>
             </form>
           </div>
           <div className="right-container w-[600px] text-white bg-[rgb(51,180,227)] rounded-tr-[30px] rounded-tl-[200px] rounded-br-[30px] rounded-bl-[200px] flex align-center justify-center text-center flex-col">
-            <h2 className="font-bold text-[40px]">Hello, Welcome!</h2>
-            <p>Don't have an account?</p>
-            <Link to="/signup" className="border-2 border-white mt-[15px] w-[120px] p-[5px] pb-[8px] rounded-2xl font-semibold ml-[250px]">Sign Up</Link>
+            <h2 className="font-bold text-[40px]">Admin Login Page</h2>
+            <img src="admin.jpg" alt="" className="h-[180px] w-[180px] ml-[230px] mt-[10px]"/>
           </div>
         </div>
       </div>
@@ -77,4 +73,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

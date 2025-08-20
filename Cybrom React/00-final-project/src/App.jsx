@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Slider from "./components/Slider";
 import FeaturedProducts from "./components/FeaturedProducts";
@@ -8,19 +8,33 @@ import Categories from "./components/Categories";
 import Cart from "./components/Cart";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Orders from "./components/Orders"; // 👈 new page
+import Orders from "./components/Orders";
 import Payment from "./components/Payment";
+import AdminPanel from "./components/AdminPanel";
+import AdminLogin from "./components/AdminLogin";
 
-// Contexts
 export const CartContext = createContext();
 export const OrdersContext = createContext();
 
 function App() {
-  // CART STATE
-  const [cart, setCart] = useState([]);
+  // --- Initialize from localStorage ---
+  const [cart, setCart] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
 
-  // ORDERS STATE
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(() => {
+    return JSON.parse(localStorage.getItem("orders")) || [];
+  });
+
+  // --- Save to localStorage whenever cart changes ---
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  // --- Save to localStorage whenever orders change ---
+  useEffect(() => {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [orders]);
 
   // --- Cart Functions ---
   const addToCart = (product) => {
@@ -53,6 +67,11 @@ function App() {
     });
   };
 
+  // ✅ New function for completely removing item
+  const deleteFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
   const clearCart = () => setCart([]);
 
   // --- Orders Functions ---
@@ -61,7 +80,9 @@ function App() {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, deleteFromCart, clearCart }}
+    >
       <OrdersContext.Provider value={{ orders, addOrder }}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -77,10 +98,12 @@ function App() {
             <Route path="categories" element={<Categories />} />
             <Route path="latest-products" element={<LatestProducts />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="orders" element={<Orders />} /> {/* 👈 New Orders page */}
+            <Route path="payment" element={<Payment />} />
+            <Route path="orders" element={<Orders />} />
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
-            <Route path="payment" element={<Payment />} />
+            <Route path="admin" element={<AdminPanel />} />
+            <Route path="adminlogin" element={<AdminLogin />} />
           </Route>
         </Routes>
       </OrdersContext.Provider>

@@ -36,7 +36,7 @@ const FeaturedProducts = () => {
     <div className="featured-products grid grid-cols-4 gap-[25px] px-[30px] mt-[30px]">
       {featuredProducts.map((product) => (
         <div
-          className="product h-[400px] w-[340px] border-2 border-gray-200 rounded-[20px] overflow-hidden px-[25px] py-[10px] flex flex-col mb-[10px] shadow-[1px_3px_3px_3px_rgb(229,231,235)]"
+          className="product h-[400px] w-[340px] border-2 border-gray-200 rounded-[20px] overflow-hidden px-[25px] py-[10px] flex flex-col mb-[10px] shadow-[5px_10px_10px_1px_rgb(229,231,235)]"
           key={product.id}
         >
           <div className="img-container h-[255px] mb-[10px] flex items-center justify-center">
