@@ -7,7 +7,7 @@ const Layout = () => {
 
   return (
     <>
-      <nav className="bg-white p-[8px] px-[40px] flex gap-[40px] items-center text-blue font-[600]">
+      <nav className="bg-white p-[8px] px-[40px] flex gap-[40px] items-center text-blue font-[600] italic">
         <div className="logo h-[6vh] w-[12.5vw] border-[1px] border-[rgb(68,202,250)] box-content flex align-center justify-center rounded-[3px] px-[3px] shadow-[2px_2px_1px_1px_rgb(68,202,250)]">
           <img src="logo.jpg" alt="logo" className="bg-no-repeat bg-contain h-[6vh] w-[11.5vw]" />
         </div>
@@ -16,9 +16,9 @@ const Layout = () => {
         <Link to="categories" className="categories">Categories</Link>
         <Link to="latest-products" className="latest-products">Latest Products</Link>  
         <Link to="cart" className="cart-container">
-          Cart ({cart.length})
+          Cart <p className="text-red-400 inline">({cart.length})</p>
         </Link>
-        <Link to="orders" className="signup-container">Orders</Link>
+        <Link to="orders" className="orders-container">Orders</Link>
         <Link to="signup" className="signup-container">Signup</Link>
       </nav>
       <hr className="text-gray-200"/>

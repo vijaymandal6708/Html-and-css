@@ -22,7 +22,7 @@ const AdminLogin = () => {
 
     if (loginFrm.email === savedAdmin.email && loginFrm.password === savedAdmin.password) {
       alert("Admin Login successful!");
-      navigate("/adminpanel"); // Redirect to Admin Panel
+      navigate("/admin"); // Redirect to Admin Panel
     } else {
       alert("Wrong Admin Credentials");
     }

@@ -1,118 +1,290 @@
-import React from "react";
+// src/pages/AdminPanel.jsx
+import { useContext, useMemo, useState, useEffect } from "react";
+import { OrdersContext } from "../App";
+import { FaUsers, FaBoxOpen, FaClipboardList, FaUserCog, FaSignOutAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import {
-  FaTachometerAlt,
-  FaBoxOpen,
-  FaShoppingCart,
-  FaUsers,
-  FaCog,
-  FaSignOutAlt,
-} from "react-icons/fa";
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  PieChart,
+  Pie,
+  Legend,
+} from "recharts";
+
+// --- FULL 24 PRODUCTS ---
+const initialProducts = [
+  { id: 1, title: "Relame GT6", price: 25999, stock: 40, image: "category-2.png", category: "Smartphone" },
+  { id: 2, title: "iPhone 15", price: 69999, stock: 25, image: "category-1.png", category: "Smartphone" },
+  { id: 3, title: "Samsung S24", price: 55999, stock: 30, image: "smartphone3.jpg", category: "Smartphone" },
+  { id: 4, title: "HP 15s Laptop", price: 42999, stock: 20, image: "laptop1.jpg", category: "Laptops" },
+  { id: 5, title: "Sony WH-1000XM5", price: 29999, stock: 60, image: "headphone1.jpg", category: "Headphones" },
+  { id: 6, title: "IQOO Neo 10R", price: 21999, stock: 35, image: "smartphone6.jpg", category: "Smartphone" },
+
+  { id: 7, title: "Realme Buds Air5", price: 3499, stock: 120, image: "category-5.jpg", category: "Headphones" },
+  { id: 8, title: "Hitage Neckband", price: 1099, stock: 100, image: "category-6.jpg", category: "Headphones" },
+  { id: 9, title: "Boat Airdopes 181", price: 1399, stock: 110, image: "category-7.jpg", category: "Headphones" },
+  { id: 10, title: "Sony Headphone XB-100", price: 19999, stock: 30, image: "category-8.jpg", category: "Headphones" },
+  { id: 11, title: "Apple Airpods Max", price: 59999, stock: 25, image: "headphone5.jpeg", category: "Headphones" },
+  { id: 12, title: "Truke Buds Clarity", price: 3399, stock: 80, image: "headphone6.jpg", category: "Headphones" },
+
+  { id: 13, title: "HP 15s ,13th Gen Intel Core i3 1315u", price: 45999, stock: 16, image: "laptop1.jpg", category: "Laptops" },
+  { id: 14, title: "Asus Vivobook 15 OLED Ryzen 7530u", price: 38000, stock: 14, image: "laptop2.jpg", category: "Laptops" },
+  { id: 15, title: "ULTIMUS Apex Laptop Intel Celeron Dual Core", price: 17999, stock: 30, image: "laptop3.jpg", category: "Laptops" },
+  { id: 16, title: "MSI Modern 15, Intel Core i7", price: 39999, stock: 12, image: "laptop4.jpg", category: "Laptops" },
+  { id: 17, title: "2022 Macbook Air Laptop, M2 Chip", price: 52999, stock: 15, image: "laptop5.jpg", category: "Laptops" },
+  { id: 18, title: "2024 MacBook Pro with M4 Chip", price: 95999, stock: 10, image: "laptop6.jpg", category: "Laptops" },
+
+  { id: 19, title: "Sony Alpha a7 48MP", price: 179999, stock: 6, image: "category-9.jpg", category: "Cameras" },
+  { id: 20, title: "Fujifilm X-H2 40MP", price: 197999, stock: 4, image: "category-10.jpg", category: "Cameras" },
+  { id: 21, title: "Canon Eos 300D", price: 148999, stock: 3, image: "category-11.jpg", category: "Cameras" },
+  { id: 22, title: "Sony Alpha ILCE 24.2MP", price: 51990, stock: 12, image: "category-12.jpg", category: "Cameras" },
+  { id: 23, title: "Sony Digital Camera 20MP", price: 34999, stock: 18, image: "camera5.webp", category: "Cameras" },
+  { id: 24, title: "Sony New Alpha ILCE 24.2MP", price: 73990, stock: 8, image: "camera6.jpg", category: "Cameras" },
+];
+
+const LOW_STOCK_THRESHOLD = 10;
 
 const AdminPanel = () => {
+  const { orders } = useContext(OrdersContext);
+  const [activeTab, setActiveTab] = useState("dashboard");
+  const [products, setProducts] = useState(initialProducts);
+  const [admin, setAdmin] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+
+  // Auth guard
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("adminLoggedIn");
+    if (!loggedIn) navigate("/admin");
+  }, [navigate]);
+
+  // Load admin credentials
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("adminAccount") || "{}");
+    if (stored.email) setAdmin(stored);
+  }, []);
+
+  // Unique Users from Orders
+  const users = useMemo(() => {
+    return Array.from(
+      new Map(
+        orders.map((o) => [o.customerName, { name: o.customerName, address: o.customerAddress }])
+      ).values()
+    );
+  }, [orders]);
+
+  // Dashboard charts
+  const ordersChartData = useMemo(
+    () =>
+      orders.slice().sort((a, b) => Number(b.id) - Number(a.id)).map((o) => ({
+        name: `#${o.id}`,
+        total: Number(o.total) || 0,
+      })),
+    [orders]
+  );
+
+  const stockByCategoryData = useMemo(() => {
+    const map = new Map();
+    for (const p of products) {
+      map.set(p.category, (map.get(p.category) || 0) + (p.stock || 0));
+    }
+    return Array.from(map, ([category, stock]) => ({ category, stock }));
+  }, [products]);
+
+  // Actions
+  function restockProduct(id, amount = 10) {
+    setProducts((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, stock: (p.stock || 0) + amount } : p))
+    );
+  }
+
+  function handleSaveAccount(e) {
+    e.preventDefault();
+    localStorage.setItem("adminAccount", JSON.stringify(admin));
+    alert("Admin credentials updated ✅");
+  }
+
+  function handleLogout() {
+    localStorage.removeItem("adminLoggedIn");
+    navigate("/adminlogin");
+  }
+
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="min-h-screen flex bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-gradient-to-b from-[rgb(68,202,250)] to-[rgb(68,100,280)] text-white flex flex-col p-5">
-        <h2 className="text-2xl font-bold mb-10 text-center">Gadget Galaxy</h2>
-
-        <nav className="flex-1 space-y-4">
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-500"
+      <aside className="w-64 bg-white shadow-lg p-6">
+        <h2 className="text-xl font-bold mb-8 text-center">Admin Panel</h2>
+        <nav className="space-y-3">
+          {[
+            ["dashboard", "📊 Dashboard"],
+            ["orders", "📝 Orders"],
+            ["users", "👤 Users"],
+            ["products", "📦 Products"],
+            ["account", <span key="acc"><FaUserCog className="inline mr-2" /> Account</span>],
+          ].map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setActiveTab(key)}
+              className={`w-full text-left px-4 py-2 rounded-lg font-medium ${
+                activeTab === key ? "bg-blue-600 text-white" : "hover:bg-gray-200"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+          <button
+            onClick={handleLogout}
+            className="w-full text-left px-4 py-2 rounded-lg font-medium text-red-600 hover:bg-red-100 flex items-center gap-2"
           >
-            <FaTachometerAlt /> Dashboard
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-500"
-          >
-            <FaBoxOpen /> Products
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-500"
-          >
-            <FaShoppingCart /> Orders
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-500"
-          >
-            <FaUsers /> Users
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-500"
-          >
-            <FaCog /> Settings
-          </a>
+            <FaSignOutAlt /> Logout
+          </button>
         </nav>
-
-        <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-600 mt-10">
-          <FaSignOutAlt /> Logout
-        </button>
       </aside>
 
-      {/* Main Content */}
+      {/* Main */}
       <main className="flex-1 p-8">
-        {/* Header */}
-        <header className="flex items-center justify-between mb-8">
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <button className="bg-[rgb(68,202,250)] hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-            Profile
-          </button>
-        </header>
+        {/* Dashboard */}
+        {activeTab === "dashboard" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">📊 Dashboard Overview</h2>
+            {/* KPIs */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+                <FaClipboardList className="text-blue-600 text-3xl mb-2" />
+                <h3 className="font-semibold text-lg">Total Orders</h3>
+                <p className="text-2xl font-bold">{orders.length}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+                <FaUsers className="text-green-600 text-3xl mb-2" />
+                <h3 className="font-semibold text-lg">Users</h3>
+                <p className="text-2xl font-bold">{users.length}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+                <FaBoxOpen className="text-orange-600 text-3xl mb-2" />
+                <h3 className="font-semibold text-lg">Products</h3>
+                <p className="text-2xl font-bold">{products.length}</p>
+              </div>
+            </div>
+            {/* Charts */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+              <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+                <h3 className="font-semibold text-lg mb-4">Order Totals</h3>
+                <div className="h-72">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={ordersChartData}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip formatter={(v) => `₹${v}`} />
+                      <Bar dataKey="total" fill="#3B82F6" radius={[6, 6, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+                <h3 className="font-semibold text-lg mb-4">Stock by Category</h3>
+                <div className="h-72">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Tooltip />
+                      <Legend />
+                      <Pie data={stockByCategoryData} dataKey="stock" nameKey="category" cx="50%" cy="50%" outerRadius={90} innerRadius={45} label />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
-        {/* Dashboard Stats */}
-        <section className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white shadow rounded-xl p-5 text-center">
-            <h3 className="text-gray-500 text-sm">Total Products</h3>
-            <p className="text-2xl font-bold">120</p>
+        {/* Orders */}
+        {activeTab === "orders" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">📝 All Orders</h2>
+            <div className="space-y-4">
+              {orders.slice().sort((a, b) => Number(b.id) - Number(a.id)).map((order) => (
+                <div key={order.id} className="p-4 bg-white rounded-lg shadow">
+                  <h3 className="font-semibold">Order #{order.id}</h3>
+                  <p className="text-sm text-gray-600">{order.customerName} | {order.customerAddress}</p>
+                  <p className="text-sm text-gray-600">Total: ₹{order.total}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="bg-white shadow rounded-xl p-5 text-center">
-            <h3 className="text-gray-500 text-sm">Total Orders</h3>
-            <p className="text-2xl font-bold">540</p>
-          </div>
-          <div className="bg-white shadow rounded-xl p-5 text-center">
-            <h3 className="text-gray-500 text-sm">Users</h3>
-            <p className="text-2xl font-bold">320</p>
-          </div>
-          <div className="bg-white shadow rounded-xl p-5 text-center">
-            <h3 className="text-gray-500 text-sm">Revenue</h3>
-            <p className="text-2xl font-bold">₹2.5L</p>
-          </div>
-        </section>
+        )}
 
-        {/* Recent Orders Table (No Customer Column) */}
-        <section className="bg-white shadow rounded-xl p-6">
-          <h2 className="text-lg font-bold mb-4">Recent Orders</h2>
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gray-100 text-left">
-                <th className="p-3 border">Order ID</th>
-                <th className="p-3 border">Amount</th>
-                <th className="p-3 border">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="hover:bg-gray-50">
-                <td className="p-3 border">#1001</td>
-                <td className="p-3 border">₹15,000</td>
-                <td className="p-3 border text-green-600">Completed</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="p-3 border">#1002</td>
-                <td className="p-3 border">₹7,500</td>
-                <td className="p-3 border text-yellow-600">Pending</td>
-              </tr>
-              <tr className="hover:bg-gray-50">
-                <td className="p-3 border">#1003</td>
-                <td className="p-3 border">₹22,000</td>
-                <td className="p-3 border text-red-600">Cancelled</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+        {/* Users */}
+        {activeTab === "users" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">👤 Users</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {users.map((u, i) => (
+                <div key={i} className="p-4 bg-white rounded-lg shadow">
+                  <h3 className="font-semibold">{u.name}</h3>
+                  <p className="text-sm text-gray-600">{u.address}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Products */}
+        {activeTab === "products" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">📦 Products</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((p) => {
+                const isOut = p.stock <= 0;
+                const isLow = !isOut && p.stock < LOW_STOCK_THRESHOLD;
+                return (
+                  <div key={p.id} className="p-4 bg-white rounded-lg shadow relative">
+                    {(isOut || isLow) && (
+                      <span className={`absolute top-2 left-2 px-2 py-0.5 text-xs font-semibold rounded-full ${
+                        isOut ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"
+                      }`}>
+                        {isOut ? "Out of stock" : `Low stock (<${LOW_STOCK_THRESHOLD})`}
+                      </span>
+                    )}
+                    <div className="relative w-full aspect-[4/3] bg-gray-100 rounded-md mb-3 overflow-hidden">
+                      <img src={p.image} alt={p.title} className={`absolute inset-0 w-full h-full object-contain ${isOut ? "opacity-60" : ""}`} loading="lazy" />
+                    </div>
+                    <h3 className="font-semibold">{p.title}</h3>
+                    <p className="text-sm text-gray-600">Price: ₹{p.price}</p>
+                    <p className="text-sm text-gray-600">Stock: {p.stock}</p>
+                    <p className="text-xs text-gray-500 mb-3">Category: {p.category}</p>
+                    <button onClick={() => restockProduct(p.id)} className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">
+                      Restock +10
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Account */}
+        {activeTab === "account" && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">⚙️ Account Settings</h2>
+            <form onSubmit={handleSaveAccount} className="bg-white p-6 rounded-xl shadow max-w-md space-y-4">
+              <div>
+                <label className="block text-sm font-medium">Email</label>
+                <input type="email" value={admin.email} onChange={(e) => setAdmin({ ...admin, email: e.target.value })} className="w-full border rounded-lg px-3 py-2 mt-1" required />
+              </div>
+              <div>
+                <label className="block text-sm font-medium">Password</label>
+                <input type="password" value={admin.password} onChange={(e) => setAdmin({ ...admin, password: e.target.value })} className="w-full border rounded-lg px-3 py-2 mt-1" required />
+              </div>
+              <button type="submit" className="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        )}
       </main>
     </div>
   );
