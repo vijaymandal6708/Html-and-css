@@ -14,6 +14,7 @@ import {
   PieChart,
   Pie,
   Legend,
+  Cell,          // ⬅️ add Cell for colored slices
 } from "recharts";
 
 // --- FULL 24 PRODUCTS ---
@@ -48,6 +49,15 @@ const initialProducts = [
 ];
 
 const LOW_STOCK_THRESHOLD = 10;
+
+// ► Category colors (feel free to tweak)
+const CATEGORY_COLORS = {
+  Smartphone: "#3B82F6", // blue-500
+  Headphones: "#10B981", // emerald-500
+  Laptops:    "#F59E0B", // amber-500
+  Cameras:    "#EF4444", // red-500
+};
+const FALLBACK_COLORS = ["#6366F1", "#06B6D4", "#84CC16", "#A855F7", "#14B8A6", "#E11D48"];
 
 const AdminPanel = () => {
   const { orders } = useContext(OrdersContext);
@@ -150,25 +160,26 @@ const AdminPanel = () => {
         {/* Dashboard */}
         {activeTab === "dashboard" && (
           <div>
-            <h2 className="text-2xl font-bold mb-6">📊 Dashboard Overview</h2>
+            <h2 className="text-xl mt-[-15px] font-bold mb-5">📊Admin Dashboard</h2>
             {/* KPIs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
                 <FaClipboardList className="text-blue-600 text-3xl mb-2" />
                 <h3 className="font-semibold text-lg">Total Orders</h3>
-                <p className="text-2xl font-bold">{orders.length}</p>
+                <p className="text-md font-bold">{orders.length}</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
                 <FaUsers className="text-green-600 text-3xl mb-2" />
                 <h3 className="font-semibold text-lg">Users</h3>
-                <p className="text-2xl font-bold">{users.length}</p>
+                <p className="text-md font-bold">{users.length}</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
                 <FaBoxOpen className="text-orange-600 text-3xl mb-2" />
                 <h3 className="font-semibold text-lg">Products</h3>
-                <p className="text-2xl font-bold">{products.length}</p>
+                <p className="text-md font-bold">{products.length}</p>
               </div>
             </div>
+
             {/* Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
               <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
@@ -185,14 +196,31 @@ const AdminPanel = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
+
               <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg">
                 <h3 className="font-semibold text-lg mb-4">Stock by Category</h3>
                 <div className="h-72">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
-                      <Tooltip />
+                      <Tooltip formatter={(value, name) => [`${value}`, `${name}`]} />
                       <Legend />
-                      <Pie data={stockByCategoryData} dataKey="stock" nameKey="category" cx="50%" cy="50%" outerRadius={90} innerRadius={45} label />
+                      <Pie
+                        data={stockByCategoryData}
+                        dataKey="stock"
+                        nameKey="category"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={90}
+                        innerRadius={45}
+                        label={(d) => `${d.category}: ${d.stock}`}
+                      >
+                        {stockByCategoryData.map((entry, idx) => {
+                          const color =
+                            CATEGORY_COLORS[entry.category] ||
+                            FALLBACK_COLORS[idx % FALLBACK_COLORS.length];
+                          return <Cell key={`slice-${idx}`} fill={color} />;
+                        })}
+                      </Pie>
                     </PieChart>
                   </ResponsiveContainer>
                 </div>

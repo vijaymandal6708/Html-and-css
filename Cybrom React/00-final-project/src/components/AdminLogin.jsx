@@ -66,6 +66,10 @@ const AdminLogin = () => {
           <div className="right-container w-[600px] text-white bg-[rgb(51,180,227)] rounded-tr-[30px] rounded-tl-[200px] rounded-br-[30px] rounded-bl-[200px] flex align-center justify-center text-center flex-col">
             <h2 className="font-bold text-[40px]">Admin Login Page</h2>
             <img src="admin.jpg" alt="" className="h-[180px] w-[180px] ml-[230px] mt-[10px]"/>
+            <div className="user-login-text flex w-[400px] gap-[20px] ml-[180px] items-center">
+                <p>Are you an user?</p>
+                <Link to="/login" className="border-2 border-white p-[5px] w-[100px] rounded-[10px]">Login Here</Link>
+            </div>
           </div>
         </div>
       </div>

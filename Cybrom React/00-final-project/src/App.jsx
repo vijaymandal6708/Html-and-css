@@ -1,3 +1,4 @@
+// src/App.jsx
 import { createContext, useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -19,75 +20,100 @@ export const CartContext = createContext();
 export const OrdersContext = createContext();
 
 function App() {
+  /** ---------------- helpers ---------------- */
+  const safeParse = (key, fallback) => {
+    try {
+      const v = JSON.parse(localStorage.getItem(key));
+      return v ?? fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
   /** ---------------- CART STATE ---------------- */
-  const [cart, setCart] = useState(() => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  });
+  const [cart, setCart] = useState(() => safeParse("cart", []));
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    try {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } catch {}
   }, [cart]);
 
   /** ---------------- ORDERS STATE ---------------- */
-  const [orders, setOrders] = useState(() => {
-    return JSON.parse(localStorage.getItem("orders")) || [];
-  });
+  const [orders, setOrders] = useState(() => safeParse("orders", []));
 
   useEffect(() => {
-    localStorage.setItem("orders", JSON.stringify(orders));
+    try {
+      localStorage.setItem("orders", JSON.stringify(orders));
+    } catch {}
   }, [orders]);
 
   /** ---------------- CART FUNCTIONS ---------------- */
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item.id === product.id);
+      let next;
       if (existing) {
-        return prevCart.map((item) =>
+        next = prevCart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: (Number(item.quantity) || 0) + 1 }
             : item
         );
+      } else {
+        next = [...prevCart, { ...product, quantity: 1 }];
       }
-      return [...prevCart, { ...product, quantity: 1 }];
+      try { localStorage.setItem("cart", JSON.stringify(next)); } catch {}
+      return next;
     });
   };
 
   const removeFromCart = (productId) => {
     setCart((prevCart) => {
-      const existing = prevCart.find((item) => item.id === productId);
-      if (existing && existing.quantity > 1) {
-        return prevCart.map((item) =>
+      const next = prevCart
+        .map((item) =>
           item.id === productId
-            ? { ...item, quantity: item.quantity - 1 }
+            ? { ...item, quantity: Math.max(0, (Number(item.quantity) || 0) - 1) }
             : item
-        );
-      }
-      return prevCart.filter((item) => item.id !== productId);
+        )
+        .filter((item) => (Number(item.quantity) || 0) > 0);
+      try { localStorage.setItem("cart", JSON.stringify(next)); } catch {}
+      return next;
     });
   };
 
   const deleteFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    setCart((prevCart) => {
+      const next = prevCart.filter((item) => item.id !== productId);
+      try { localStorage.setItem("cart", JSON.stringify(next)); } catch {}
+      return next;
+    });
   };
 
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+    try { localStorage.setItem("cart", JSON.stringify([])); } catch {}
+  };
 
   /** ---------------- ORDER FUNCTIONS ---------------- */
-  const addOrder = (cartItems, userDetails) => {
-    const newOrder = {
-      id: Date.now(),
-      items: cartItems,
-      total: cartItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-      ),
-      username: userDetails?.username || "Guest",
-      address: userDetails?.address || "Not Provided",
-      date: new Date().toLocaleString(),
+  // ✅ Accept a full order object (matches Payment.jsx)
+  const addOrder = (order) => {
+    const normalized = {
+      id: order?.id ?? Date.now(),
+      items: Array.isArray(order?.items) ? order.items : [],
+      total: Number(order?.total) || 0,
+      customerName: order?.customerName || order?.username || "Guest",
+      customerAddress: order?.customerAddress || order?.address || "Not Provided",
+      paymentMethod: order?.paymentMethod || "",
+      date: order?.date || new Date().toLocaleString(),
     };
 
-    setOrders((prev) => [newOrder, ...prev]);
-    clearCart(); // ✅ clear cart after placing order
+    setOrders((prev) => {
+      const next = [normalized, ...(prev || [])]; // newest first
+      try { localStorage.setItem("orders", JSON.stringify(next)); } catch {}
+      return next;
+    });
+
+    // Do NOT clear the cart here; Payment.jsx already clears after success.
   };
 
   /** ---------------- RENDER ---------------- */

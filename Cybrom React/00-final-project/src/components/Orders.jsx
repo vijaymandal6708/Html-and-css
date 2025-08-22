@@ -12,7 +12,7 @@ const Orders = () => {
       <h2 className="text-2xl font-bold mb-6 text-center underline italic">Your Orders</h2>
 
       {sortedOrders.length === 0 ? (
-        <div className="h-[300px] flex flex-col items-center justify-center">
+        <div className="h-[350px] flex flex-col items-center justify-center">
           <img src="noOrder.jpg" alt="no orders" className="h-[200px] w-[200px]" />
           <p className="text-center text-base mt-4">You have no orders yet.</p>
         </div>
@@ -21,7 +21,7 @@ const Orders = () => {
           {sortedOrders.map((order) => (
             <div
               key={order.id}
-              className="p-7 border rounded-xl shadow bg-white"
+              className="p-5 border rounded-xl shadow bg-white"
             >
               {/* Order Header */}
               <div className="flex justify-between items-center mb-1 text-sm">
