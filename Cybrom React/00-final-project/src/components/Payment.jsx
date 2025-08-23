@@ -163,9 +163,9 @@ const Payment = () => {
           required
         >
           <option value="">-- Please select --</option>
-          <option value="COD">Cash on Delivery 💵</option>
-          <option value="UPI">UPI / Wallet 📱</option>
-          <option value="Card">Credit / Debit Card 💳</option>
+          <option value="COD">Cash on Delivery</option>
+          <option value="UPI">UPI / Wallet</option>
+          <option value="Card">Credit / Debit Card</option>
         </select>
       </div>
 
