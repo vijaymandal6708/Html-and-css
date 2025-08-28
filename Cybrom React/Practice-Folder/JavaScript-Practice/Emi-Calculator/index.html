@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Expense Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9fafb;
+    }
+    h1 { text-align: center; }
+    form { margin-bottom: 20px; }
+    input, button {
+      padding: 6px;
+      margin: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th { background: #eee; }
+    .summary { margin: 15px 0; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Expense Tracker</h1>
+
+  <!-- Balance Form -->
+  <form id="balanceForm">
+    <input type="number" id="balanceInput" placeholder="Add Balance" required>
+    <button type="submit">Add Balance</button>
+  </form>
+
+  <!-- Expense Form -->
+  <form id="expenseForm">
+    <input type="date" id="date" required>
+    <input type="text" id="desc" placeholder="Description" required>
+    <input type="number" id="amount" placeholder="Amount" required>
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <div class="summary">
+    <h3>Total Expenses: <span id="total">0</span></h3>
+    <h3>Balance: <span id="balance">0</span></h3>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <script>
+    const expenseForm = document.getElementById('expenseForm');
+    const balanceForm = document.getElementById('balanceForm');
+    const dateEl = document.getElementById('date');
+    const descEl = document.getElementById('desc');
+    const amtEl = document.getElementById('amount');
+    const balanceInput = document.getElementById('balanceInput');
+    const tbody = document.getElementById('tbody');
+    const totalEl = document.getElementById('total');
+    const balanceEl = document.getElementById('balance');
+
+    let expenses = [];
+    let balance = 0;
+
+    // Add balance
+    balanceForm.addEventListener('submit', e => {
+      e.preventDefault();
+      balance += Number(balanceInput.value);
+      balanceInput.value = '';
+      render();
+    });
+
+    // Add expense
+    expenseForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const expense = {
+        date: dateEl.value,
+        desc: descEl.value,
+        amount: Number(amtEl.value)
+      };
+      expenses.push(expense);
+      render();
+      expenseForm.reset();
+    });
+
+    function render(){
+      tbody.innerHTML = '';
+      let total = 0;
+      expenses.forEach((e, i) => {
+        total += e.amount;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${e.date}</td>
+          <td>${e.desc}</td>
+          <td>${e.amount}</td>
+          <td><button onclick="deleteExpense(${i})">Delete</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+      totalEl.textContent = total;
+      balanceEl.textContent = balance - total;
+    }
+
+    function deleteExpense(i){
+      expenses.splice(i, 1);
+      render();
+    }
+  </script>
+</body>
+</html>
