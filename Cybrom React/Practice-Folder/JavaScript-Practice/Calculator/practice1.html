@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 490px;
+            width: 300px;
+            border: 1px solid black;
+            align-self: center;
+            justify-self: center;
+            margin-top: 100px;
+        }
+        #display{
+            height: 50px;
+            width: 270px;
+            margin: 20px 14px;
+            box-sizing: border-box;
+            text-align: right;
+            padding: 20px;
+        }
+        .button-container{
+            height: 400px;
+            width: 300px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 16px;
+        }
+        button{
+            height: 55px;
+            width: 55px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="display" disabled>
+        <div class="button-container">
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="append('+')">+</button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+
+        let display = document.querySelector("#display");
+
+        function append(val) {
+            display.value = display.value+val;
+        }
+
+        function calculate(){
+            display.value = eval(display.value)
+        }
+    </script>
+</body>
+</html>
