@@ -1,15 +1,50 @@
-import { Link, Outlet } from 'react-router-dom'
-import { useContext } from 'react'
-import { CartContext } from '../App'   // ⬅️ import context
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../App";
+import { FaUserCircle } from "react-icons/fa";   
+import { IoLogOut } from "react-icons/io5";      
 
 const Layout = () => {
-  const { cart } = useContext(CartContext) // ⬅️ access cart state
+  const { cart } = useContext(CartContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkLogin();
+  }, []);
+
+  // ✅ check login state using ONLY currentUser
+  const checkLogin = () => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (currentUser?.email) {
+      setIsLoggedIn(true);
+      setUsername(currentUser?.name || "User");
+    } else {
+      setIsLoggedIn(false);
+      setUsername("");
+    }
+  };
+
+  // ✅ logout clears only currentUser
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser");
+    setIsLoggedIn(false);
+    setUsername("");
+    navigate("/"); 
+  };
 
   return (
     <>
+      {/* ---------- NAVBAR ---------- */}
       <nav className="bg-white p-[8px] px-[40px] flex gap-[40px] items-center text-blue font-[600] italic">
         <div className="logo h-[6vh] w-[12.5vw] border-[1px] border-[rgb(68,202,250)] box-content flex align-center justify-center rounded-[3px] px-[3px] shadow-[2px_2px_1px_1px_rgb(68,202,250)]">
-          <img src="logo.jpg" alt="logo" className="bg-no-repeat bg-contain h-[6vh] w-[11.5vw]" />
+          <img
+            src="logo.jpg"
+            alt="logo"
+            className="bg-no-repeat bg-contain h-[6vh] w-[11.5vw]"
+          />
         </div>
 
         <Link to="/" className="home ml-auto">Home</Link>
@@ -19,17 +54,36 @@ const Layout = () => {
           Cart <p className="text-red-400 inline">({cart.length})</p>
         </Link>
         <Link to="orders" className="orders-container">Orders</Link>
-        <Link to="signup" className="signup-container">Signup</Link>
-      </nav>
-      <hr className="text-gray-200"/>
 
+        {/* ✅ Show Signup only if NOT logged in */}
+        {!isLoggedIn && (
+          <Link to="signup" className="signup-container">Signup</Link>
+        )}
+
+        {/* ✅ Show User + Logout only if logged in */}
+        {isLoggedIn && (
+          <div className="flex items-center gap-3 ml-4">
+            <FaUserCircle size={28} className="text-blue-500" />
+            <span className="text-sm font-medium">{username}</span>
+            <button onClick={handleLogout} title="Logout">
+              <IoLogOut size={26} className="text-red-500 cursor-pointer" />
+            </button>
+          </div>
+        )}
+      </nav>
+      <hr className="text-gray-200" />
+
+      {/* ---------- MAIN CONTENT ---------- */}
       <Outlet />
 
+      {/* ---------- FOOTER ---------- */}
       <footer>
         <div className="footer-container flex h-[180px] justify-evenly bg-[rgb(68,202,250)] my-[20px]">
           <div className="leading-[30px] h-[160px] w-[350px] flex flex-col align-center justify-center text-center">
             <h3 className="font-bold text-[16px]">Download Our App</h3>
-            <p className="text-[13.2px] italic font-[490]">Download App for Android Ios Phones</p>
+            <p className="text-[13.2px] italic font-[490]">
+              Download App for Android Ios Phones
+            </p>
             <div className="img-container flex justify-center gap-[15px] mt-[3px]">
               <img src="play-store.png" alt="play-store" className="h-[30px] w-[80px]" />
               <img src="app-store.png" alt="app-store" className="h-[30px] w-[80px]" />
@@ -38,7 +92,9 @@ const Layout = () => {
 
           <div className="h-[160px] w-[350px] flex flex-col text-center align-center justify-center">
             <img src="logo.jpg" alt="logo" className="h-[35px] w-[120px] rounded-[2px] ml-[120px]" />
-            <p className="text-[14px] mt-[12px] italic">Our Purpose is to Deliver The Best Quality</p>
+            <p className="text-[14px] mt-[12px] italic">
+              Our Purpose is to Deliver The Best Quality
+            </p>
             <p className="text-[14px] italic">Electronic Products Possible</p>
           </div>
 
@@ -64,7 +120,7 @@ const Layout = () => {
         </div>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

@@ -117,7 +117,7 @@ const Payment = () => {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            disabled
             placeholder="Enter your full name"
             className="w-full p-2 border rounded-md text-sm"
           />

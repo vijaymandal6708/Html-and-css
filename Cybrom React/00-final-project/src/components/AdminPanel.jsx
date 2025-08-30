@@ -19,12 +19,12 @@ import {
 
 // --- FULL 24 PRODUCTS ---
 const initialProducts = [
-  { id: 1, title: "Relame GT6", price: 25999, stock: 40, image: "category-2.png", category: "Smartphone" },
-  { id: 2, title: "iPhone 15", price: 69999, stock: 25, image: "category-1.png", category: "Smartphone" },
-  { id: 3, title: "Samsung S24", price: 55999, stock: 30, image: "smartphone3.jpg", category: "Smartphone" },
-  { id: 4, title: "HP 15s Laptop", price: 42999, stock: 20, image: "laptop1.jpg", category: "Laptops" },
-  { id: 5, title: "Sony WH-1000XM5", price: 29999, stock: 60, image: "headphone1.jpg", category: "Headphones" },
-  { id: 6, title: "IQOO Neo 10R", price: 21999, stock: 35, image: "smartphone6.jpg", category: "Smartphone" },
+  { id: 1, title: "Oneplus Nord Ce 2 Lite 5G", price: 19999, image: "category-1.jpg", category: "Smartphone" },
+    { id: 2, title: "Realme GT 6", price: 25999, image: "category-2.png", category: "Smartphone" },
+    { id: 3, title: "Nothing Phone 2a", price: 15999, image: "category-3.avif", category: "Smartphone" },
+    { id: 4, title: "Lava Blaze 5g Pro", price: 12999, image: "category-4.jpg", category: "Smartphone" },
+    { id: 5, title: "Samsung Galaxy F15 5G", price: 13999, image: "smartphone5.jpg", category: "Smartphone" },
+    { id: 6, title: "IQOO Neo 10R", price: 21999, image: "smartphone6.jpg", category: "Smartphone" },
 
   { id: 7, title: "Realme Buds Air5", price: 3499, stock: 120, image: "category-5.jpg", category: "Headphones" },
   { id: 8, title: "Hitage Neckband", price: 1099, stock: 100, image: "category-6.jpg", category: "Headphones" },

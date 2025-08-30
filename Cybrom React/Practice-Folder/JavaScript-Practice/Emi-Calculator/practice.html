@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
    <form id="balanceForm">
@@ -46,14 +52,62 @@
     const dateEl = document.getElementById('date');
     const descEl = document.getElementById('desc');
     const amountEl = document.getElementById('amount');
-    const tbody = document.getElementById('');
+    const tbody = document.getElementById('tbody');
     const totalEl = document.getElementById('total');
-    const balanceLefeEl = document.getElementById('balanceLeft');
+    const balanceLeftEl = document.getElementById('balanceLeft');
 
     let balance = 0;
     let total = 0;
 
-    
+    function updateSummary(){
+        totalEl.textContent = total;
+        balanceLeftEl.textContent = balance - total;
+    }
+
+    balanceForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const add = Number(balanceInput.value) || 0;
+        balance += add;
+        balanceInput.value = '';
+        updateSummary()
+    })
+
+    expenseForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const expense = {
+            date: dateEl.value,
+            desc: descEl.value.trim(),
+            amount: Number(amountEl.value) || 0
+        };
+
+        if(expense.amount <= 0) return;
+
+        total += expense.amount;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+        <td>${expense.date}</td>
+        <td>${expense.desc}</td>
+        <td>${expense.amount}</td>
+        <td><button class="delete">Delete</button></td>
+        `;
+
+        tr.dataset.amount = String(expense.amount);
+
+        tr.querySelector('.delete').addEventListener('click', ()=> {
+           const amt = Number(tr.dataset.amount) || 0;
+           total -= amt;
+           tr.remove();
+           updateSummary(); 
+        });
+
+        tbody.appendChild(tr);
+        updateSummary();
+        expenseForm.reset();
+    });
+
+    updateSummary();
 
    </script>
 </body>

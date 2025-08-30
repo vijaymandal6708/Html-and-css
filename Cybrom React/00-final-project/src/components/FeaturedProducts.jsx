@@ -33,6 +33,9 @@ const FeaturedProducts = () => {
   ];
 
   return (
+
+    <>
+    <h2 className='font-bold text-[22px] text-center italic mt-[24px]'>Featured Products</h2>
     <div className="featured-products grid grid-cols-4 gap-[25px] px-[30px] mt-[30px]">
       {featuredProducts.map((product) => (
         <div
@@ -62,6 +65,7 @@ const FeaturedProducts = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

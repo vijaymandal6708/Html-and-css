@@ -65,6 +65,7 @@ function App() {
       try { localStorage.setItem("cart", JSON.stringify(next)); } catch {}
       return next;
     });
+    alert("✅ Item added to cart!");
   };
 
   const removeFromCart = (productId) => {
