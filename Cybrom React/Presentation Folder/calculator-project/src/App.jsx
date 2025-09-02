@@ -1,36 +1,19 @@
-import './App.css'
-import { useState } from 'react';
-// this is calculator program
-
+import "./App.css";
+import { useState } from "react";
 function App() {
   let [val, setVal] = useState("");
-
-  const operators = ["+", "-", "*", "/", "%", "."];
-
   function append(input) {
-    // Prevent two operators in a row
-    if (operators.includes(input) && operators.includes(val.slice(-1))) {
-      return; // do nothing
-    }
     setVal(val + input);
   }
-
   function calculate() {
-    try {
-      setVal(eval(val).toString());
-    } catch {
-      setVal("Error");
-    }
+    setVal(eval(val));
   }
-
   function clearr() {
     setVal(val.slice(0, -1));
   }
-
   function allclear() {
     setVal("");
   }
-
   return (
     <>
       <h2>Calculator Project</h2>
@@ -60,7 +43,6 @@ function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
-
 export default App;
