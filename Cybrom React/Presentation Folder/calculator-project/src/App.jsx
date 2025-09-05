@@ -12,7 +12,7 @@ function App() {
     setVal(val.slice(0, -1));
   }
   function allclear() {
-    setVal("0");
+    setVal("");
   }
   return (
     <>
