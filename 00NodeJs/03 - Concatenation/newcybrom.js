@@ -1,5 +1,5 @@
 const MyDate = () => {
-    return "hello";
+    return Date();
 }
 
 const MyCity = () => {
