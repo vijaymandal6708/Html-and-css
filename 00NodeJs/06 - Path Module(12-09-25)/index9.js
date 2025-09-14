@@ -1,7 +1,7 @@
-// console.log(__dirname);
-// console.log(__filename);
-
 const path = require("path");
+
+console.log(__dirname);
+console.log(__filename);
 
 // const mypath = path.join(__dirname, "raj.txt");
 
