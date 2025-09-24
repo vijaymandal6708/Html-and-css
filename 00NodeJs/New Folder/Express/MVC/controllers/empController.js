@@ -1,21 +1,21 @@
-const homePage = ()=>{
-    res.send("Employees Home page")
+const homePage = (req, res)=>{
+    res.render("emphome");
 }
 
 const aboutPage = ()=>{
-    res.send("Employees About page")
+    res.render("empabout");
 }
 
 const designationPage = ()=>{
-    res.send("Employees Designation page")
+    res.render("empdesignation");
 }
 
 const departmentPage = ()=>{
-    res.send("Employees Department page")
+    res.render("empdepartment");
 }
 
 const salaryPage = ()=>{
-    res.send("Employees Salary page")
+    res.render("empsalary");
 }
 
 module.exports = {
