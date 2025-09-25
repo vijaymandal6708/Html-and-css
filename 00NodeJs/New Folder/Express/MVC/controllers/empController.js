@@ -2,7 +2,7 @@ const homePage = (req, res)=>{
     res.render("emphome");
 }
 
-const aboutPage = ()=>{
+const aboutPage = (req, res)=>{
     res.render("empabout");
 }
 

@@ -3,5 +3,8 @@ const route = express.Router();
 const stuController = require("../controllers/stuController")
 
 route.get("/home", stuController.homePage);
+route.get("/about", stuController.aboutPage);
+route.get("/services", stuController.servicesPage);
+route.get("/contact", stuController.contactPage);
 
 module.exports = route;
