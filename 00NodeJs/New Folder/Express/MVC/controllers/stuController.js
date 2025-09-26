@@ -1,3 +1,5 @@
+const stuModel = require("../models/studentModel")
+
 const express = require("express");
 
 const homePage = (req, res)=> {

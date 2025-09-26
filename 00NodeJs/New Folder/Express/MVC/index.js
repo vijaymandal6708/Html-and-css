@@ -1,7 +1,12 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const stuRoute = require("./routes/stuRoute");
 const empRoute = require("./routes/empRoute");
+
+mongoose.connect("mongodb://127.0.0.1:27017/vijaymandal").then(()=>{
+    console.log("mongodb conneted");
+})
 
 app.set("view engine", "ejs")
 
