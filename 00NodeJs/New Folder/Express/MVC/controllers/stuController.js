@@ -14,11 +14,21 @@ const servicesPage = (req, res)=> {
 const contactPage = (req, res)=> {
     res.render("stucontact");
 }
+const coursePage = (req, res)=> {
+    res.render("stucourse");
+}
+const dataSave = async (req, res)=> {
+    console.log(req.body);
+    res.end("<h1>Student data send successfully</h1>");
+    await stuModel.create(req.body);
+}
 
 
 module.exports = {
     homePage,
     aboutPage,
     servicesPage,
-    contactPage
+    contactPage,
+    coursePage,
+    dataSave
 }

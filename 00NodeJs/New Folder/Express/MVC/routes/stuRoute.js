@@ -5,6 +5,8 @@ const stuController = require("../controllers/stuController")
 route.get("/home", stuController.homePage);
 route.get("/about", stuController.aboutPage);
 route.get("/services", stuController.servicesPage);
+route.get("/course", stuController.servicesPage);
 route.get("/contact", stuController.contactPage);
+route.post("/dataSave", stuController.dataSave);
 
 module.exports = route;
