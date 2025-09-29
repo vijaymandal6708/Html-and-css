@@ -8,5 +8,6 @@ route.get("/services", stuController.servicesPage);
 route.get("/course", stuController.servicesPage);
 route.get("/contact", stuController.contactPage);
 route.post("/dataSave", stuController.dataSave);
+route.get("/display", stuController.displayPage);
 
 module.exports = route;

@@ -1,4 +1,4 @@
-const stuModel = require("../models/studentModel")
+const stuModel = require("../models/studentModel");
 
 const express = require("express");
 
@@ -19,9 +19,14 @@ const coursePage = (req, res)=> {
 }
 const dataSave = async (req, res)=> {
     console.log(req.body);
-    res.end("<h1>Student data send successfully</h1>");
     await stuModel.create(req.body);
+    res.send("<h1>Student data send successfully</h1>");
 }
+const displayPage = async (req, res)=> {
+    const Student = await stuModel.find();
+    res.render("studisplay", {Stu:Student});
+}
+
 
 
 module.exports = {
@@ -30,5 +35,6 @@ module.exports = {
     servicesPage,
     contactPage,
     coursePage,
-    dataSave
+    dataSave,
+    displayPage
 }
