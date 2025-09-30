@@ -1,5 +1,4 @@
 const stuModel = require("../models/studentModel");
-
 const express = require("express");
 
 const homePage = (req, res)=> {
@@ -17,17 +16,45 @@ const contactPage = (req, res)=> {
 const coursePage = (req, res)=> {
     res.render("stucourse");
 }
+
 const dataSave = async (req, res)=> {
-    console.log(req.body);
-    await stuModel.create(req.body);
-    res.send("<h1>Student data send successfully</h1>");
+    try {
+        console.log(req.body);
+        await stuModel.create(req.body);
+        res.send("<h1>Student data saved successfully</h1>");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error saving student data");
+    }
 }
+
 const displayPage = async (req, res)=> {
-    const Student = await stuModel.find();
-    res.render("studisplay", {Stu:Student});
+    try {
+        const Student = await stuModel.find();
+        res.render("studisplay", { Stu: Student });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error fetching student data");
+    }
 }
 
+// show empty search form
+const searchPage = (req, res)=> {
+    res.render("stusearch", { Stu: [] });
+}
 
+// search by roll number
+const stuPage = async (req, res)=> {
+    try {
+        const { rollno } = req.body;
+        const Student = await stuModel.find({ roll: rollno });
+        console.log(Student);
+        res.render("stusearch", { Stu: Student });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error searching student data");
+    }
+}
 
 module.exports = {
     homePage,
@@ -36,5 +63,7 @@ module.exports = {
     contactPage,
     coursePage,
     dataSave,
-    displayPage
+    displayPage,
+    stuPage,
+    searchPage
 }
