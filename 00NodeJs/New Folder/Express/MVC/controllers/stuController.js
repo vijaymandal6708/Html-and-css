@@ -1,57 +1,80 @@
 const stuModel = require("../models/studentModel");
-const express = require("express");
 
-const homePage = (req, res)=> {
+// Render Home Page
+const homePage = (req, res) => {
     res.render("stuhome");
 }
-const aboutPage = (req, res)=> {
+
+// Render About Page
+const aboutPage = (req, res) => {
     res.render("stuabout");
 }
-const servicesPage = (req, res)=> {
+
+// Render Services Page
+const servicesPage = (req, res) => {
     res.render("stuservices");
 }
-const contactPage = (req, res)=> {
+
+// Render Contact Page
+const contactPage = (req, res) => {
     res.render("stucontact");
 }
-const coursePage = (req, res)=> {
+
+// Render Course Page
+const coursePage = (req, res) => {
     res.render("stucourse");
 }
 
-const dataSave = async (req, res)=> {
+// Save student data
+const dataSave = async (req, res) => {
     try {
-        console.log(req.body);
-        await stuModel.create(req.body);
+        console.log("Data received:", req.body);
+        // Convert numeric fields to Number
+        const newStudent = {
+            rollno: Number(req.body.rollno),
+            name: req.body.name,
+            city: req.body.city,
+            fees: Number(req.body.fees)
+        };
+        await stuModel.create(newStudent);
         res.send("<h1>Student data saved successfully</h1>");
     } catch (error) {
-        console.error(error);
+        console.error("Error saving student:", error);
         res.status(500).send("Error saving student data");
     }
 }
 
-const displayPage = async (req, res)=> {
+// Display all students
+const displayPage = async (req, res) => {
     try {
-        const Student = await stuModel.find();
-        res.render("studisplay", { Stu: Student });
+        const students = await stuModel.find();
+        res.render("studisplay", { Stu: students });
     } catch (error) {
-        console.error(error);
+        console.error("Error fetching students:", error);
         res.status(500).send("Error fetching student data");
     }
 }
 
-// show empty search form
-const searchPage = (req, res)=> {
+// Show empty search form
+const searchPage = (req, res) => {
     res.render("stusearch", { Stu: [] });
 }
 
-// search by roll number
-const stuPage = async (req, res)=> {
+// Search student by roll number
+const stuPage = async (req, res) => {
     try {
         const { rollno } = req.body;
-        const Student = await stuModel.find({ roll: rollno });
-        console.log(Student);
-        res.render("stusearch", { Stu: Student });
+
+        // Debug: log received rollno and type
+        console.log("rollno from form:", rollno, typeof rollno);
+
+        // Convert to Number before querying
+        const students = await stuModel.find({ rollno: Number(rollno) });
+        console.log("Query result:", students);
+
+        res.render("stusearch", { Stu: students });
     } catch (error) {
-        console.error(error);
+        console.error("Error searching student:", error);
         res.status(500).send("Error searching student data");
     }
 }
@@ -64,6 +87,6 @@ module.exports = {
     coursePage,
     dataSave,
     displayPage,
-    stuPage,
-    searchPage
+    searchPage,
+    stuPage
 }
