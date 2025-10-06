@@ -14,7 +14,7 @@ const datasaveFunc = async (req, res) => {
             <p><strong>Name:</strong> ${req.body.name}</p>
             <p><strong>Roll No:</strong> ${req.body.rollno}</p>
             <br>
-            <a href="/students/home">← Back to Home</a>
+            <a href="/students/home">Back to Home</a>
         `);
 };
 
