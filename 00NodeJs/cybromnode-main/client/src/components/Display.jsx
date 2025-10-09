@@ -30,7 +30,7 @@ const Display = () => {
     <>
       <h1>Display Record</h1>
       <hr />
-      <table>
+      <table border={1}>
          <tr>
            <th>Rollno</th>
            <th>Name</th>

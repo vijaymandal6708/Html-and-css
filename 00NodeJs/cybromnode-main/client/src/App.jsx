@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Insert from "./components/Insert";
 import Display from "./components/Display";
 import Update from "./components/Update";
+import Search from "./components/Search";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="insert" element={<Insert />} />
           <Route path="display" element={<Display />} />
           <Route path="update" element={<Update />} />
+          <Route path="search" element={<Search />} />
         </Route>
       </Routes>
     </div>
