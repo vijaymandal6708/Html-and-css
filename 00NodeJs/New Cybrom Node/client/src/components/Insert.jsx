@@ -11,7 +11,7 @@ const Insert = () => {
 
   const handleSubmit = async (e) => {
      e.preventDefault();
-     const url = "http://localhost:3001/students/create";
+     const url = "http://localhost:3002/students/create";
      const res = await axios.post(url, frmdata);
      alert(res.data);
   }

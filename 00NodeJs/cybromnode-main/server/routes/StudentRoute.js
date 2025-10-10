@@ -5,6 +5,8 @@ const router=express.Router();
 router.post("/create",stucontroller.createStudent);
 router.get("/display",stucontroller.dataDisplay);
 router.post("/search",stucontroller.dataSearch);
+router.get("/updatedata",stucontroller.updateDisplay);
+router.get("/updatedelete",stucontroller.updateDelete);
 
 
 

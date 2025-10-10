@@ -22,9 +22,15 @@ const dataSearch=async(req,res)=>{
     res.send(Student);
 }
 
+const updateDisplay = async (req,res)=>{
+    const Student = await StudentModel.find();
+    res.send(Student);
+}
+
 
 module.exports={
     createStudent,
     dataDisplay,
-    dataSearch
+    dataSearch,
+    updateDisplay
 };
