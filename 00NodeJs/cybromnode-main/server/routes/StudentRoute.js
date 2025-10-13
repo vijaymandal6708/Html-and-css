@@ -7,7 +7,7 @@ router.get("/display",stucontroller.dataDisplay);
 router.post("/search",stucontroller.dataSearch);
 router.get("/updatedata",stucontroller.updateDisplay);
 router.delete("/updatedelete",stucontroller.updateDelete);
-router.delete("/updatedelete",stucontroller.newrouteDelete);
+router.delete("/updatedelete",stucontroller.newroute);
 
 
 
