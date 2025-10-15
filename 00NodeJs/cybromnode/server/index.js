@@ -11,6 +11,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/student",stuRoute);
 mongoose.connect(process.env.DBCONNECTION).then(() => console.log("connected to db"));
+mongoose.connect(process.env.DBCONNECTION).then(() => console.log("connected to db"));
 
 const port = process.env.PORT;
 
