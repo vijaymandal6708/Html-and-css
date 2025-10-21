@@ -2,9 +2,13 @@ import React from 'react'
 
 const Layout = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <nav>
+        <Link to="/home">Home</Link>
+        <Link to="/insert">Insert</Link>
+        <Link to="/display">Display</Link>
+      </nav>
+    </>
   )
 }
 
