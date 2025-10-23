@@ -10,10 +10,10 @@ const Insert = () => {
      setFrmdata(()=>({...frmdata, [e.target.name]:e.target.value}));
    }
 
-   const handlSubmit =(e)=>{
+   const handleSubmit =async(e)=>{
     e.preventDefault();
     console.log(frmdata);
-    const response = axios.post("http://localhost:9000/students/insert");
+    const response = await axios.post("http://localhost:9000/students/insert", frmdata);
      alert("Student added successfully!");
    }
 
@@ -21,7 +21,7 @@ const Insert = () => {
   return (
     <>
       <h1>This is the insert page</h1>
-      <form onSubmit={handlSubmit}>
+      <form onSubmit={handleSubmit}>
         Enter Name : <input type="text" name="name" onChange={handleInput}/> <br /> <br />
         Enter RollNo : <input type="number" name="rollno" onChange={handleInput}/> <br /> <br />
         Enter City : <input type="text" name="city" onChange={handleInput}/> <br /> <br />
