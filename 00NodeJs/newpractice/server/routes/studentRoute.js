@@ -16,5 +16,15 @@ route.get("/display", async(req,res)=>{
     const displaystudent = await Student.find();
     res.send(displaystudent);
 });
+route.post("/search", async(req,res)=>{
+    const {rollno}= req.body;
+    const searchstudent = await Student.find({rollno:rollno});
+    res.send(searchstudent);
+});
+route.get("/edit", async(req,res)=>{
+    const editstudent = await Student.find();
+    res.send(editstudent);
+});
+
 
 module.exports = route;
