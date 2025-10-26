@@ -1,18 +1,31 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const Edit = () => {
 
   const [student,setStudent] = useState([]);
-  
-  useEffect(()=>{
-    const loadData = async () => {
-        const editResponse = await axios.get("http://localhost:9000/students/edit");
-        setStudent(editResponse.data);
-    }
+
+  const navigate = useNavigate();
+
+  const loadData = async () => {
+    const editResponse = await axios.get("http://localhost:9000/students/edit");
+    setStudent(editResponse.data);
+  };
+
+  useEffect(() => {
     loadData();
   }, []);
 
+  const handleDelete = async (id)=>{
+    const deleteResponse = await axios.get(`http://localhost:9000/students/delete/${id}`);
+    loadData();
+  }
+
+  const handleEdit = async (id)=>{
+      navigate(`/update/${id}`);
+  }
+  
   return (
     <>
       <table border={1}>
@@ -33,7 +46,10 @@ const Edit = () => {
                     <td>{i.rollno}</td>
                     <td>{i.city}</td>
                     <td>{i.fees}</td>
-                    <td></td>
+                    <td>
+                      <button onClick={()=>handleDelete(i._id)}>Delete</button>|
+                      <button onClick={()=>handleEdit(i._id)}>Edit</button>
+                    </td>
                 </tr>
                ))
             }

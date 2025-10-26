@@ -6,6 +6,7 @@ import Layout from './components/Layout';
 import Display from './components/Display';
 import Search from './components/Search';
 import Edit from './components/Edit';
+import Update from './components/Update';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="display" element={<Display/>}></Route>
             <Route path="search" element={<Search/>}></Route>
             <Route path="edit" element={<Edit/>}></Route>
+            <Route path="update/:id" element={<Update/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
