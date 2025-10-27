@@ -1,12 +1,10 @@
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './components/Home';
 import Insert from './components/Insert';
-import Layout from './components/Layout';
 import Display from './components/Display';
 import Search from './components/Search';
 import Edit from './components/Edit';
-import Update from './components/Update';
 
 function App() {
 
@@ -21,7 +19,6 @@ function App() {
             <Route path="display" element={<Display/>}></Route>
             <Route path="search" element={<Search/>}></Route>
             <Route path="edit" element={<Edit/>}></Route>
-            <Route path="update/:id" element={<Update/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

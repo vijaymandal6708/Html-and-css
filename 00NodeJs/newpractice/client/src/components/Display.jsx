@@ -2,35 +2,33 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const Display = () => {
-   const [student, setStudent] = useState([]);
-   
-   useEffect(()=>{
-      let loadData = async () =>{
-        const res = await axios.get("http://localhost:9000/students/display");
-        setStudent(res.data);
-      }
-      loadData();
-   },[]);
 
-   return (
+   const [displaydata, setDisplaydata] = useState([]);
+
+   useEffect(()=>{
+    loadData();
+   }, []);
+
+   const loadData = async () =>{
+    const displayResponse = await axios.get("http://localhost:8500/students/display");
+    setDisplaydata(displayResponse.data);
+   }
+
+  return (
     <>
       <table border={1}>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>RollNo</th>
-                <th>City</th>
-                <th>Fees</th>
+                <td>Name</td>
+                <td>Rollno</td>
             </tr>
         </thead>
         <tbody>
             {
-                student.map((i)=>(
-                    <tr>
-                        <th>{i.name}</th>
-                        <th>{i.rollno}</th>
-                        <th>{i.city}</th>
-                        <th>{i.fees}</th>
+                displaydata.map((i,index)=>(
+                    <tr key={index}>
+                        <td>{i.name}</td>
+                        <td>{i.rollno}</td>
                     </tr>
                 ))
             }

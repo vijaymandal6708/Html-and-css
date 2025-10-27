@@ -1,57 +1,45 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
 
 const Edit = () => {
 
-  const [student,setStudent] = useState([]);
+  const [displayData, setDisplaydata] = useState([]);
 
-  const navigate = useNavigate();
-
-  const loadData = async () => {
-    const editResponse = await axios.get("http://localhost:9000/students/edit");
-    setStudent(editResponse.data);
-  };
-
-  useEffect(() => {
+  useEffect(()=>{
     loadData();
   }, []);
 
+  const loadData = async ()=>{
+    const displayResponse = await axios.get("http://localhost:8500/students/display");
+    setDisplaydata(displayResponse.data);
+  };
+
   const handleDelete = async (id)=>{
-    const deleteResponse = await axios.get(`http://localhost:9000/students/delete/${id}`);
-    loadData();
+    const deleteResponse = await axios.post("http://localhost:8500/students/delete", {id});
   }
 
-  const handleEdit = async (id)=>{
-      navigate(`/update/${id}`);
-  }
-  
   return (
     <>
-      <table border={1}>
+      <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Rollno</th>
-                <th>City</th>
-                <th>Fees</th>
                 <th>Edit</th>
             </tr>
         </thead>
         <tbody>
             {
-               student.map((i, index)=>(
-                <tr key={index}>
-                    <td>{i.name}</td>
-                    <td>{i.rollno}</td>
-                    <td>{i.city}</td>
-                    <td>{i.fees}</td>
-                    <td>
-                      <button onClick={()=>handleDelete(i._id)}>Delete</button>|
-                      <button onClick={()=>handleEdit(i._id)}>Edit</button>
-                    </td>
-                </tr>
-               ))
+                displayData.map((i, index)=>(
+                    <tr key={index}>
+                        <td>{i.name}</td>
+                        <td>{i.rollno}</td>
+                        <td>
+                            <button>Edit</button>|
+                            <button onClick={()=>handleDelete(i._id)}>Delete</button>
+                        </td>
+                    </tr>
+                ))
             }
         </tbody>
       </table>

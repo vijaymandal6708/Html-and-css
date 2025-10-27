@@ -12,7 +12,7 @@ const Edit = () => {
 
     useEffect(()=>{
         loadData();
-    },[])
+    },[]);
 
     const handleInput=(e)=>{
         setStudent((prev)=>({...prev,[e.target.name]:e.target.value}))

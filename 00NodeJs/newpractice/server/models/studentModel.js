@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-    name:String,
-    rollno:Number,
-    city:String,
-    fees:Number
+    name: String,
+    rollno: Number
 });
 
-module.exports = mongoose.model("student", studentSchema);
+module.exports = mongoose.model("Student", studentSchema);

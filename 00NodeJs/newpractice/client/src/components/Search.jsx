@@ -3,50 +3,42 @@ import React, { useState } from 'react';
 
 const Search = () => {
 
-    const [rollno, setRollno] = useState("");
-    const [student, setStudent] = useState([]);
+  const [rollno, setRollno] = useState("");
+  const [searchresponse,  setSearchresponse] = useState([]);
 
-    const handleInput = (e)=>{
-        setRollno(e.target.value)
-    }
+  const handleInput = (e) =>{
+    setRollno(e.target.value);
+  };
 
-    const handleSubmit = async (e) =>{
-       e.preventDefault();
-       const studentSearch = await axios.post("http://localhost:9000/students/search", {rollno});
-       setStudent(studentSearch.data);
-       console.log(studentSearch.data);
-    }
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    const searchResponse = await axios.post("http://localhost:8500/students/search", {rollno});
+    setSearchresponse(searchResponse.data);
+  }
 
   return (
     <>
-      <br />
-      <br />
       <form onSubmit={handleSubmit}>
-        Enter roll no: <input type="number" name="rollno" onChange={handleInput}/>
+        Enter Roll no : <input type="number" name="rollno" onChange={handleInput} />
         <button type="submit">Search</button>
       </form>
       <br />
-      <hr />
       <br />
       <table border={1}>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Rollno</th>
-                <th>City</th>
-                <th>Fees</th>
+                <td>Name</td>
+                <td>Rollno</td>
             </tr>
         </thead>
         <tbody>
             {
-                student.map((i)=>(
-                    <tr>
-                        <td>{i.name}</td>
-                        <td>{i.rollno}</td>
-                        <td>{i.city}</td>
-                        <td>{i.fees}</td>
-                    </tr>
-                ))
+              searchresponse.map((i, index)=>(
+                <tr key={index}>
+                    <td>{i.name}</td>
+                    <td>{i.rollno}</td>
+                </tr>
+               )) 
             }
         </tbody>
       </table>

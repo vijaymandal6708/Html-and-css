@@ -1,31 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Insert = () => {
 
-   const [frmdata, setFrmdata] = useState({});
+    const [formdata, setFormdata] = useState({});
 
-   const handleInput =(e)=>{
-     console.log(e.target.value);
-     setFrmdata(()=>({...frmdata, [e.target.name]:e.target.value}));
-   }
+    const handleInput = (e) =>{
+        setFormdata(()=>({...formdata, [e.target.name]:e.target.value}));
+        console.log(formdata);
+    }
 
-   const handleSubmit =async(e)=>{
-    e.preventDefault();
-    console.log(frmdata);
-    const response = await axios.post("http://localhost:9000/students/insert", frmdata);
-     alert("Student added successfully!");
-   }
-
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+        const resFormdata = await axios.post("http://localhost:8500/students/insert", formdata);
+        alert("student added successfully");
+        console.log(resFormdata.data)
+    }
 
   return (
     <>
-      <h1>This is the insert page</h1>
+      <br /> <br />
       <form onSubmit={handleSubmit}>
-        Enter Name : <input type="text" name="name" onChange={handleInput}/> <br /> <br />
-        Enter RollNo : <input type="number" name="rollno" onChange={handleInput}/> <br /> <br />
-        Enter City : <input type="text" name="city" onChange={handleInput}/> <br /> <br />
-        Enter Fees : <input type="number" name="fees" onChange={handleInput}/> <br /> <br />
+        Enter Name: <input type="text" name="name" onChange={handleInput}/> <br /> <br />
+        Enter Rollno: <input type="number" name="rollno" onChange={handleInput}/> <br /> <br />
         <button type="submit">Add Student</button>
       </form>
     </>
