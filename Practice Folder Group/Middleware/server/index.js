@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const errorHandler = require("./middleware/errorHandler");
 
 app.use(cors());
 
@@ -13,6 +14,19 @@ app.use("/home",(req,res)=>{
     res.status(401).send("homepage with error occur");
    }
 });
+
+app.use("/button5",(req,res,next)=>{
+   throw new Error("Button5 wrong");
+   next();
+});
+
+app.use("/button6",(req,res)=>{
+   throw new Error("Button6 wrong");
+   next();
+});
+
+app.use(errorHandler);
+
 
 app.use("/",(req,res,next)=>{
    console.log("hello this is app level middleware");
@@ -30,6 +44,8 @@ app.use("/service",(req,res,next)=>{
 }, (req,res)=>{
     console.log("hello this is path level middleware 2");
 });
+
+
 
 
 app.listen(9001, ()=>{

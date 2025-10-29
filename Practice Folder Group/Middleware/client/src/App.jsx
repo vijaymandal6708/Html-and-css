@@ -27,12 +27,34 @@ function App() {
     }
   };
 
+  const handleButton5 = async ()=>{
+    try {
+      const respnse = await axios.get("http://localhost:9001/button5");
+      console.log(respnse);
+    }
+    catch (error) {
+      alert(error.response.data);
+    }
+  };
+
+  const handleButton6 = async ()=>{
+    try {
+      const respnse = await axios.get("http://localhost:9001/button6");
+      console.log(respnse)
+    }
+    catch (error) {
+      alert(error.response.data);
+    }
+  };
+
   return (
     <>
       <button onClick={handleButton1}>button1</button>
       <button onClick={handleButton2}>button2</button>
       <button onClick={handleButton3}>button3</button>
       <button onClick={handleButton4}>button4</button>
+      <button onClick={handleButton5}>button5</button>
+      <button onClick={handleButton6}>button6</button>
     </>
   )
 }
